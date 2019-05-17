@@ -1,0 +1,35 @@
+C:\Mijn Documenten\Wk 2018 Poule\Wk2018 Poule\Wk2018 Poule\bin\Debug\Wk2018 Poule.exe.config
+C:\Mijn Documenten\Wk 2018 Poule\Wk2018 Poule\Wk2018 Poule\bin\Debug\Wk2018 Poule.exe
+C:\Mijn Documenten\Wk 2018 Poule\Wk2018 Poule\Wk2018 Poule\bin\Debug\Wk2018 Poule.pdb
+C:\Mijn Documenten\Wk 2018 Poule\Wk2018 Poule\Wk2018 Poule\obj\Debug\Wk2018 Poule.csprojResolveAssemblyReference.cache
+C:\Mijn Documenten\Wk 2018 Poule\Wk2018 Poule\Wk2018 Poule\obj\Debug\Wk2018_Poule.Properties.Resources.resources
+C:\Mijn Documenten\Wk 2018 Poule\Wk2018 Poule\Wk2018 Poule\obj\Debug\Wk2018 Poule.csproj.GenerateResource.Cache
+C:\Mijn Documenten\Wk 2018 Poule\Wk2018 Poule\Wk2018 Poule\obj\Debug\Wk2018 Poule.exe
+C:\Mijn Documenten\Wk 2018 Poule\Wk2018 Poule\Wk2018 Poule\obj\Debug\Wk2018 Poule.pdb
+C:\Mijn Documenten\Wk 2018 Poule\Wk2018 Poule\Wk2018 Poule\obj\Debug\Wk2018_Poule.TotoForm.resources
+C:\Mijn Documenten\Wk 2018 Poule\Wk2018 Poule\Wk2018 Poule\obj\Debug\Wk2018_Poule.PassWordForm.resources
+C:\Mijn Documenten\Wk 2018 Poule\Wk2018 Poule\Wk2018 Poule\obj\Debug\Wk2018_Poule.MainForm.resources
+C:\Mijn Documenten\Wk 2018 Poule\Wk2018 Poule\Wk2018 Poule\obj\Debug\Wk2018_Poule.RankingForm.resources
+C:\Mijn Documenten\Wk 2018 Poule\Wk2018 Poule\Wk2018 Poule\obj\Debug\Wk2018_Poule.RulesForm.resources
+C:\Mijn Documenten\Wk 2018 Poule\Wk2018 Poule\Wk2018 Poule\obj\Debug\Wk2018_Poule.SchedduleForm.resources
+C:\Mijn Documenten\Wk 2018 Poule\Wk2018 Poule\Wk2018 Poule\obj\Debug\Wk2018_Poule.HostForm.resources
+C:\Mijn Documenten\Wk 2018 Poule\Wk2018 Poule\Wk2018 Poule\obj\Debug\Wk2018_Poule.PlayerForm.resources
+C:\Mijn Documenten\Wk 2018 Poule\Wk2018 Poule\Wk2018 Poule\obj\Debug\Wk2018_Poule.EmailsForm.resources
+C:\Users\Administrator\Documents\Wk 2018 Poule\Wk2018 Poule\Wk2018 Poule\bin\Debug\Wk2018 Poule.exe.config
+C:\Users\Administrator\Documents\Wk 2018 Poule\Wk2018 Poule\Wk2018 Poule\bin\Debug\Wk2018 Poule.exe
+C:\Users\Administrator\Documents\Wk 2018 Poule\Wk2018 Poule\Wk2018 Poule\bin\Debug\Wk2018 Poule.pdb
+C:\Users\Administrator\Documents\Wk 2018 Poule\Wk2018 Poule\Wk2018 Poule\obj\Debug\Wk2018 Poule.csprojAssemblyReference.cache
+C:\Users\Administrator\Documents\Wk 2018 Poule\Wk2018 Poule\Wk2018 Poule\obj\Debug\Wk2018_Poule.EmailsForm.resources
+C:\Users\Administrator\Documents\Wk 2018 Poule\Wk2018 Poule\Wk2018 Poule\obj\Debug\Wk2018_Poule.HostForm.resources
+C:\Users\Administrator\Documents\Wk 2018 Poule\Wk2018 Poule\Wk2018 Poule\obj\Debug\Wk2018_Poule.MainForm.resources
+C:\Users\Administrator\Documents\Wk 2018 Poule\Wk2018 Poule\Wk2018 Poule\obj\Debug\Wk2018_Poule.PlayerForm.resources
+C:\Users\Administrator\Documents\Wk 2018 Poule\Wk2018 Poule\Wk2018 Poule\obj\Debug\Wk2018_Poule.RankingForm.resources
+C:\Users\Administrator\Documents\Wk 2018 Poule\Wk2018 Poule\Wk2018 Poule\obj\Debug\Wk2018_Poule.PassWordForm.resources
+C:\Users\Administrator\Documents\Wk 2018 Poule\Wk2018 Poule\Wk2018 Poule\obj\Debug\Wk2018_Poule.Properties.Resources.resources
+C:\Users\Administrator\Documents\Wk 2018 Poule\Wk2018 Poule\Wk2018 Poule\obj\Debug\Wk2018_Poule.RulesForm.resources
+C:\Users\Administrator\Documents\Wk 2018 Poule\Wk2018 Poule\Wk2018 Poule\obj\Debug\Wk2018_Poule.SchedduleForm.resources
+C:\Users\Administrator\Documents\Wk 2018 Poule\Wk2018 Poule\Wk2018 Poule\obj\Debug\Wk2018_Poule.TotoForm.resources
+C:\Users\Administrator\Documents\Wk 2018 Poule\Wk2018 Poule\Wk2018 Poule\obj\Debug\Wk2018 Poule.csproj.GenerateResource.cache
+C:\Users\Administrator\Documents\Wk 2018 Poule\Wk2018 Poule\Wk2018 Poule\obj\Debug\Wk2018 Poule.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Documents\Wk 2018 Poule\Wk2018 Poule\Wk2018 Poule\obj\Debug\Wk2018 Poule.exe
+C:\Users\Administrator\Documents\Wk 2018 Poule\Wk2018 Poule\Wk2018 Poule\obj\Debug\Wk2018 Poule.pdb
