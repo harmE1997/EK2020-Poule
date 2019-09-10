@@ -1,9 +1,0 @@
-C:\Mijn Documenten\Wk 2018 Poule\Wk2018 Poule\UnitTestProject1\bin\Debug\UnitTestProject1.dll
-C:\Mijn Documenten\Wk 2018 Poule\Wk2018 Poule\UnitTestProject1\bin\Debug\UnitTestProject1.pdb
-C:\Mijn Documenten\Wk 2018 Poule\Wk2018 Poule\UnitTestProject1\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
-C:\Mijn Documenten\Wk 2018 Poule\Wk2018 Poule\UnitTestProject1\bin\Debug\Wk2018 Poule.exe
-C:\Mijn Documenten\Wk 2018 Poule\Wk2018 Poule\UnitTestProject1\bin\Debug\Wk2018 Poule.pdb
-C:\Mijn Documenten\Wk 2018 Poule\Wk2018 Poule\UnitTestProject1\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.xml
-C:\Mijn Documenten\Wk 2018 Poule\Wk2018 Poule\UnitTestProject1\obj\Debug\UnitTestProject1.csprojResolveAssemblyReference.cache
-C:\Mijn Documenten\Wk 2018 Poule\Wk2018 Poule\UnitTestProject1\obj\Debug\UnitTestProject1.dll
-C:\Mijn Documenten\Wk 2018 Poule\Wk2018 Poule\UnitTestProject1\obj\Debug\UnitTestProject1.pdb
