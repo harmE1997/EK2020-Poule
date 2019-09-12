@@ -6,90 +6,74 @@ using System.Threading.Tasks;
 
 namespace Wk2018_Poule
 {
+    public enum BonusKeys
+    {
+        goals,
+        owngoals,
+        yellows,
+        reds,
+        topscorer
+    }
+    public struct Question
+    {
+        public dynamic Answer;
+        public bool estimation;
+        public int missmultiplier;
+        public int award;
+    }
+
     [Serializable]
     public class BonusQuestions
     {
-        public int nrGoals { get; private set; }
-        public int nrOwnGoals { get; private set; }
-        public int nrYellowCards { get; private set; }
-        public int nrRedCards { get; private set; }
-        public string Topscorer { get; private set; }
-
+        public Dictionary<BonusKeys, Question> Questions { get; private set; }
         public BonusQuestions(int goals, int owngoals, int yellows, int reds, string topscorer)
         {
             if (string.IsNullOrEmpty(topscorer))
             {
                 throw new ArgumentNullException();
             }
-            nrGoals = goals;
-            nrOwnGoals = owngoals;
-            nrRedCards = reds;
-            nrYellowCards = yellows;
-            Topscorer = topscorer;
+
+            Questions = new Dictionary<BonusKeys, Question>()
+            {
+                {BonusKeys.goals, new Question() { Answer = goals, estimation = true, missmultiplier = 4, award = 200 } },
+                {BonusKeys.owngoals, new Question() { Answer = owngoals, estimation = true, missmultiplier = 30, award = 100 } },
+                {BonusKeys.reds, new Question() { Answer = reds, estimation = true, missmultiplier = 20, award = 100 } },
+                {BonusKeys.yellows, new Question() { Answer = yellows, estimation = true, missmultiplier = 4, award = 200 } },
+                {BonusKeys.topscorer, new Question() { Answer = topscorer, estimation = false, missmultiplier = 0, award = 100 } }
+            };
         }
 
         public int checkQuestions(BonusQuestions answers)
-        {
-            if (answers == null)
             {
-                return -1;
-            }
-
-            int Score = 0;
- 
-            if (answers.nrGoals != 0)
-            {
-                int miss = Math.Abs(nrGoals - answers.nrGoals);
-                int minpoints = miss * 4;
-                if (minpoints > 200)
+                if (answers == null)
                 {
-                    minpoints = 200;
+                    return -1;
                 }
-                Score += (200 - minpoints);
-            }
 
-            if (answers.nrOwnGoals != 0)
-            {
-                int miss = Math.Abs(nrOwnGoals - answers.nrOwnGoals);
-                int minpoints = miss * 30;
-                if (minpoints > 100)
+                int Score = 0;
+                foreach (var q in Questions)
                 {
-                    minpoints = 100;
-                }
-                Score += (100 - minpoints);
-            }
+                    if (q.Value.estimation)
+                    {
+                        int miss = Math.Abs(q.Value.Answer - answers.Questions[q.Key].Answer);
+                        int minpoints = miss * q.Value.missmultiplier;
+                        if (minpoints > q.Value.award)
+                        {
+                        minpoints = q.Value. award;
+                        }
+                        Score += (q.Value.award - minpoints);
+                    }
 
-            if (answers.nrYellowCards != 0)
-            {
-                int miss = Math.Abs(nrYellowCards - answers.nrYellowCards);
-                int minpoints = miss * 4;
-                if (minpoints > 200)
-                {
-                    minpoints = 200;
+                    else
+                    {
+                        if (q.Value.Answer == answers.Questions[q.Key].Answer)
+                        {
+                            Score += q.Value.award;
+                        }
+                    }
                 }
-                Score += (200 - minpoints);
-            }
 
-            if (answers.nrRedCards != 0)
-            {
-                int miss = Math.Abs(nrRedCards - answers.nrRedCards);
-                int minpoints = miss * 20;
-                if (minpoints > 100)
-                {
-                    minpoints = 100;
-                }
-                Score += (100 - minpoints);
+                return Score;
             }
-
-            if (!string.IsNullOrEmpty(answers.Topscorer))
-            {
-                if (answers.Topscorer == Topscorer)
-                {
-                    Score += 100;
-                }
-            }
-
-            return Score;
         }
     }
-}

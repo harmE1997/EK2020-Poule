@@ -25,13 +25,7 @@ namespace Wk2018_Poule
         private void createHost()
         {
             PoolMatchResult[] matches = new PoolMatchResult[48];
-            string[] last16 = new string[16] { "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "" };
-            string[] last8 = new string[8] { "", "", "", "", "", "", "", "" };
-            string[] last4 = new string[4] { "", "", "", "" };
-            string[] final = new string[2] { "", "" };
-            string[] champion = new string[1] { "" };
-
-            KnockOutPhase ko = new KnockOutPhase(last16, last8, last4, final, champion);
+            KnockOutPhase ko = new KnockOutPhase();
             BonusQuestions answers = new BonusQuestions(0, 0, 0, 0, "l");
 
             host = new Player("Host", matches, ko, answers);

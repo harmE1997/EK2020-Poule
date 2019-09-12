@@ -13,7 +13,7 @@ namespace Wk2018_Poule
 {
     public partial class TotoForm : Form
     {
-        private TextBox[] textboxes = new TextBox[33];
+        private Dictionary<KOKeys, TextBox[]> kolocs;
         private NumericUpDown[] NUDs = new NumericUpDown[96];
         public PlayerManager manager;
         public TotoForm()
@@ -36,13 +36,8 @@ namespace Wk2018_Poule
         private void btnSubmit_Click(object sender, EventArgs e)
         {
             manager.LoadPlayers();
-
             PoolMatchResult[] matches = new PoolMatchResult[48];
-            string[] last16 = new string[16];
-            string[] last8 = new string[8];
-            string[] last4 = new string[4] {tb41.Text, tb42.Text, tb43.Text, tb44.Text   };
-            string[] final = new string[2] {tbF1.Text, tbF2.Text };
-            string[] champion = new string[] { tbChampion.Text };
+            KnockOutPhase KO = new KnockOutPhase();
             int x = 0;
             while (x < 96)
             {
@@ -51,20 +46,17 @@ namespace Wk2018_Poule
                 x += 2;
             }
 
-            for (int i = 0; i < 16; i++)
+            foreach (var k in kolocs)
             {
-                last16[i] = textboxes[i].Text;
+                foreach (var t in k.Value)
+                {
+                    KO.Stages[k.Key].teams.Add(t.Text);
+                }
             }
-
-            for (int i = 16; i < 24; i++)
-            {
-                last8[i - 16] = textboxes[i].Text;
-            }                 
 
             try
             {
-                KnockOutPhase KO = new KnockOutPhase(last16, last8, last4, final, champion);
-                BonusQuestions guess = new BonusQuestions(Convert.ToInt16(tbName.Value), Convert.ToInt16(nudOwnGoals.Value), Convert.ToInt16(nudYellows.Value)
+                BonusQuestions guess = new BonusQuestions(Convert.ToInt16(nudGoals.Value), Convert.ToInt16(nudOwnGoals.Value), Convert.ToInt16(nudYellows.Value)
                         , Convert.ToInt16(nudReds.Value), tbTopscorer.Text);
 
                 manager.removePlayer(tbName.Text);
@@ -99,53 +91,30 @@ namespace Wk2018_Poule
             {
                 foreach (var team in stage.Value.teams)
                 {
-                    textboxes[i].Text = team;
+                    kolocs[stage.Key][i].Text = team;
                     i++;
                 }
             }
 
-            tbName.Value = player.Bonusquestions.nrGoals;
-            nudOwnGoals.Value = player.Bonusquestions.nrOwnGoals;
-            nudYellows.Value = player.Bonusquestions.nrYellowCards;
-            nudReds.Value = player.Bonusquestions.nrRedCards;
-            tbTopscorer.Text = player.Bonusquestions.Topscorer;
+            nudGoals.Value = player.Bonusquestions.Questions[BonusKeys.goals].Answer;
+            nudOwnGoals.Value = player.Bonusquestions.Questions[BonusKeys.owngoals].Answer;
+            nudYellows.Value = player.Bonusquestions.Questions[BonusKeys.yellows].Answer;
+            nudReds.Value = player.Bonusquestions.Questions[BonusKeys.reds].Answer;
+            tbTopscorer.Text = player.Bonusquestions.Questions[BonusKeys.topscorer].Answer;
             tbName.Text = player.Name;
         }
 
         private void fillArrays()
         {
-            textboxes[0] = tb161;
-            textboxes[1] = tb162;
-            textboxes[2] = tb163;
-            textboxes[3] = tb164;
-            textboxes[4] = tb165;
-            textboxes[5] = tb166;
-            textboxes[6] = tb167;
-            textboxes[7] = tb168;
-            textboxes[8] = tb169;
-            textboxes[9] = tb1610;
-            textboxes[10] = tb1611;
-            textboxes[11] = tb1612;
-            textboxes[12] = tb1613;
-            textboxes[13] = tb1614;
-            textboxes[14] = tb1615;
-            textboxes[15] = tb1616;
-            textboxes[16] = tb81;
-            textboxes[17] = tb82;
-            textboxes[18] = tb83;
-            textboxes[19] = tb84;
-            textboxes[20] = tb85;
-            textboxes[21] = tb86;
-            textboxes[22] = tb87;
-            textboxes[23] = tb88;
-            textboxes[24] = tb41;
-            textboxes[25] = tb42;
-            textboxes[26] = tb43;
-            textboxes[27] = tb44;
-            textboxes[28] = tbF1;
-            textboxes[29] = tbF2;
-            textboxes[31] = tbChampion;
-            textboxes[32] = tbTopscorer;
+            kolocs = new Dictionary<KOKeys, TextBox[]>()
+            {
+                {KOKeys.sixteen, new TextBox[]{
+                    tb161, tb162, tb163, tb164, tb165, tb166, tb167, tb168, tb169, tb1610, tb1611, tb1612, tb1613, tb1613, tb1614, tb1615, tb1616 } },
+                {KOKeys.quarter, new TextBox[]{tb81, tb82, tb83, tb84, tb85, tb86, tb87, tb88, } },
+                {KOKeys.semi, new TextBox[]{tb41, tb42, tb43, tb44 } },
+                {KOKeys.final, new TextBox[]{tbF1, tbF2} },
+                {KOKeys.champ, new TextBox[]{tbChampion } }
+            };
 
             NUDs[0] = nudA11;
             NUDs[1] = nudA12;

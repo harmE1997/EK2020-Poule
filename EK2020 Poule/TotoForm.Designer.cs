@@ -180,7 +180,7 @@
             this.label49 = new System.Windows.Forms.Label();
             this.btnSubmit = new System.Windows.Forms.Button();
             this.label50 = new System.Windows.Forms.Label();
-            this.tbName = new System.Windows.Forms.NumericUpDown();
+            this.nudGoals = new System.Windows.Forms.NumericUpDown();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lblKOInfo = new System.Windows.Forms.Label();
             this.gbBonus = new System.Windows.Forms.GroupBox();
@@ -197,7 +197,7 @@
             this.label53 = new System.Windows.Forms.Label();
             this.nudYellows = new System.Windows.Forms.NumericUpDown();
             this.label51 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tbName = new System.Windows.Forms.TextBox();
             this.lblName = new System.Windows.Forms.Label();
             this.gbA.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudA62)).BeginInit();
@@ -281,7 +281,7 @@
             this.gbLast8.SuspendLayout();
             this.gbLast4.SuspendLayout();
             this.gbFinal.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tbName)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudGoals)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.gbBonus.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudReds)).BeginInit();
@@ -1814,18 +1814,18 @@
             this.label50.TabIndex = 30;
             this.label50.Text = "Aantal doelpunten WK";
             // 
-            // tbName
+            // nudGoals
             // 
-            this.tbName.Location = new System.Drawing.Point(232, 20);
-            this.tbName.Margin = new System.Windows.Forms.Padding(4);
-            this.tbName.Maximum = new decimal(new int[] {
+            this.nudGoals.Location = new System.Drawing.Point(232, 20);
+            this.nudGoals.Margin = new System.Windows.Forms.Padding(4);
+            this.nudGoals.Maximum = new decimal(new int[] {
             300,
             0,
             0,
             0});
-            this.tbName.Name = "tbName";
-            this.tbName.Size = new System.Drawing.Size(95, 22);
-            this.tbName.TabIndex = 31;
+            this.nudGoals.Name = "nudGoals";
+            this.nudGoals.Size = new System.Drawing.Size(95, 22);
+            this.nudGoals.TabIndex = 31;
             // 
             // groupBox1
             // 
@@ -1873,7 +1873,7 @@
             this.gbBonus.Controls.Add(this.nudYellows);
             this.gbBonus.Controls.Add(this.label51);
             this.gbBonus.Controls.Add(this.label50);
-            this.gbBonus.Controls.Add(this.tbName);
+            this.gbBonus.Controls.Add(this.nudGoals);
             this.gbBonus.ForeColor = System.Drawing.Color.White;
             this.gbBonus.Location = new System.Drawing.Point(732, 510);
             this.gbBonus.Margin = new System.Windows.Forms.Padding(4);
@@ -2029,12 +2029,12 @@
             this.label51.TabIndex = 32;
             this.label51.Text = "Max 200, -4 voor elk doelpunt ernaast";
             // 
-            // textBox1
+            // tbName
             // 
-            this.textBox1.Location = new System.Drawing.Point(172, 73);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(176, 22);
-            this.textBox1.TabIndex = 34;
+            this.tbName.Location = new System.Drawing.Point(172, 73);
+            this.tbName.Name = "tbName";
+            this.tbName.Size = new System.Drawing.Size(176, 22);
+            this.tbName.TabIndex = 34;
             // 
             // lblName
             // 
@@ -2054,7 +2054,7 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1788, 726);
             this.Controls.Add(this.lblName);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.tbName);
             this.Controls.Add(this.gbBonus);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnSubmit);
@@ -2159,7 +2159,7 @@
             this.gbLast4.PerformLayout();
             this.gbFinal.ResumeLayout(false);
             this.gbFinal.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tbName)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudGoals)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.gbBonus.ResumeLayout(false);
@@ -2326,7 +2326,7 @@
         private System.Windows.Forms.Label label49;
         private System.Windows.Forms.Button btnSubmit;
         private System.Windows.Forms.Label label50;
-        private System.Windows.Forms.NumericUpDown tbName;
+        private System.Windows.Forms.NumericUpDown nudGoals;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox gbBonus;
         private System.Windows.Forms.Label label59;
@@ -2343,7 +2343,7 @@
         private System.Windows.Forms.Label label56;
         private System.Windows.Forms.Label label52;
         private System.Windows.Forms.Label lblKOInfo;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tbName;
         private System.Windows.Forms.Label lblName;
     }
 }

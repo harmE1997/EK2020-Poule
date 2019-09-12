@@ -18,7 +18,7 @@ namespace Wk2018_Poule
     public struct Stage
     {
         public int award;
-        public string[] teams;
+        public List<string> teams;
     }
 
     [Serializable]
@@ -26,20 +26,15 @@ namespace Wk2018_Poule
     {
         public Dictionary<KOKeys ,Stage>Stages { get; private set; }
 
-        public KnockOutPhase(string[] last16, string[] last8, string[] last4, string[] final, string[] champion)
+        public KnockOutPhase()
         {
-            if (last16 == null || last8 == null || last4 == null || final == null || champion == null)
-            {
-                throw new ArgumentNullException();
-            }
-
             Stages = new Dictionary<KOKeys, Stage>()
             {
-                {KOKeys.sixteen, new Stage() { award = 25, teams = last16 } },
-                {KOKeys.quarter, new Stage() { award = 50, teams = last8 } },
-                {KOKeys.semi, new Stage() { award = 100, teams = last4 } },
-                {KOKeys.final, new Stage() { award = 200, teams = final } },
-                {KOKeys.champ, new Stage() { award = 250, teams = champion } }
+                {KOKeys.sixteen, new Stage() { award = 25, teams = new List<string>() } },
+                {KOKeys.quarter, new Stage() { award = 50, teams = new List<string>()} },
+                {KOKeys.semi, new Stage() { award = 100, teams = new List<string>() } },
+                {KOKeys.final, new Stage() { award = 200, teams = new List<string>() } },
+                {KOKeys.champ, new Stage() { award = 250, teams = new List<string>() } }
             };
         }
 
