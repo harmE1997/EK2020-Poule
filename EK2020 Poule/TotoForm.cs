@@ -11,12 +11,12 @@ using System.IO;
 
 namespace Wk2018_Poule
 {
-    public partial class TotoForm : Form
+    public partial class gbFileInput : Form
     {
         private Dictionary<KOKeys, TextBox[]> kolocs;
         private NumericUpDown[] NUDs = new NumericUpDown[96];
         public PlayerManager manager;
-        public TotoForm()
+        public gbFileInput()
         {
             InitializeComponent();
             fillArrays();
@@ -56,11 +56,8 @@ namespace Wk2018_Poule
 
             try
             {
-                BonusQuestions guess = new BonusQuestions(Convert.ToInt16(nudGoals.Value), Convert.ToInt16(nudOwnGoals.Value), Convert.ToInt16(nudYellows.Value)
-                        , Convert.ToInt16(nudReds.Value), tbTopscorer.Text);
-
                 manager.removePlayer(tbName.Text);
-                Player player = new Player(tbName.Text, matches, KO, guess);
+                Player player = new Player(tbName.Text, matches, KO, tbTopscorer.Text);
                 manager.AddPlayer(player);
 
             }
@@ -96,11 +93,7 @@ namespace Wk2018_Poule
                 }
             }
 
-            nudGoals.Value = player.Bonusquestions.Questions[BonusKeys.goals].Answer;
-            nudOwnGoals.Value = player.Bonusquestions.Questions[BonusKeys.owngoals].Answer;
-            nudYellows.Value = player.Bonusquestions.Questions[BonusKeys.yellows].Answer;
-            nudReds.Value = player.Bonusquestions.Questions[BonusKeys.reds].Answer;
-            tbTopscorer.Text = player.Bonusquestions.Questions[BonusKeys.topscorer].Answer;
+            tbTopscorer.Text = player.Topscorer;
             tbName.Text = player.Name;
         }
 
@@ -193,6 +186,36 @@ namespace Wk2018_Poule
             NUDs[69] = nudF52;
             NUDs[70] = nudF61;
             NUDs[71] = nudF62;
+        }
+
+        private void btnSelectFile_Click(object sender, EventArgs e)
+        {
+            if (ofdExcelFile.ShowDialog() == DialogResult.OK)
+            {
+                string file = ofdExcelFile.FileName;
+                if (file.EndsWith(".xlsx") || file.EndsWith(".xls"))
+                {
+                    tbFile.Text = ofdExcelFile.FileName;
+                }
+
+                else
+                {
+                    MessageBox.Show("Invalid file type!");
+                }
+            }
+        }
+
+        private void btnFile_Click(object sender, EventArgs e)
+        {
+            string file = tbFile.Text;
+            ExcelManager em = new ExcelManager();
+            ExcelReadSettings settings = new ExcelReadSettings(); 
+            Player player = new Player(tbName.Text, em.ReadGroupPhase(file,1, settings), em.readKnockout(file, 1, settings), em.readTopscorer(file, 1));
+            manager.removePlayer(tbName.Text);
+            manager.AddPlayer(player);
+            manager.SavePlayers();
+            Hide();
+            Dispose();
         }
     }
 }

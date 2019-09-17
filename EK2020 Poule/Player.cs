@@ -12,11 +12,11 @@ namespace Wk2018_Poule
         public string Name { get; private set; }
         public PoolMatchResult[] Results { get; private set; }
         public KnockOutPhase KnockOut { get; private set; }
-        public BonusQuestions Bonusquestions { get; private set; }
+        public string Topscorer { get; private set; }
         public int Score { get; private set; }
         public int Ranking { get; private set; }
 
-        public Player(string name, PoolMatchResult[] poolmatches, KnockOutPhase KO, BonusQuestions bonus)
+        public Player(string name, PoolMatchResult[] poolmatches, KnockOutPhase KO, string topscorer)
         {
             if (name != "Host")
             {
@@ -27,7 +27,7 @@ namespace Wk2018_Poule
 
             }
 
-            if (poolmatches == null || KO == null || bonus == null)
+            if (poolmatches == null || KO == null)
             {
                 throw new ArgumentNullException();
             }
@@ -35,7 +35,7 @@ namespace Wk2018_Poule
             Score = 0;
             Results = poolmatches;
             KnockOut = KO;
-            Bonusquestions = bonus;
+            Topscorer = topscorer;
         }
 
         public void setRanking(int rank)
@@ -84,12 +84,11 @@ namespace Wk2018_Poule
                 Score += checkscore;
             }
 
-            //bonus questions
-            checkscore= Bonusquestions.checkQuestions(host.Bonusquestions);
-            if (checkscore != -1)
+            if (Topscorer == host.Topscorer)
             {
-                Score += checkscore;
+                Score += 100;
             }
+            
             return true;
         }
 

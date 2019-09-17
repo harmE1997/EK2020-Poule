@@ -1,6 +1,6 @@
 ﻿namespace Wk2018_Poule
 {
-    partial class TotoForm
+    partial class gbFileInput
     {
         /// <summary>
         /// Required designer variable.
@@ -179,26 +179,18 @@
             this.tbChampion = new System.Windows.Forms.TextBox();
             this.label49 = new System.Windows.Forms.Label();
             this.btnSubmit = new System.Windows.Forms.Button();
-            this.label50 = new System.Windows.Forms.Label();
-            this.nudGoals = new System.Windows.Forms.NumericUpDown();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lblKOInfo = new System.Windows.Forms.Label();
-            this.gbBonus = new System.Windows.Forms.GroupBox();
-            this.label56 = new System.Windows.Forms.Label();
-            this.label52 = new System.Windows.Forms.Label();
-            this.label54 = new System.Windows.Forms.Label();
             this.label59 = new System.Windows.Forms.Label();
             this.tbTopscorer = new System.Windows.Forms.TextBox();
             this.label58 = new System.Windows.Forms.Label();
-            this.label57 = new System.Windows.Forms.Label();
-            this.nudReds = new System.Windows.Forms.NumericUpDown();
-            this.label55 = new System.Windows.Forms.Label();
-            this.nudOwnGoals = new System.Windows.Forms.NumericUpDown();
-            this.label53 = new System.Windows.Forms.Label();
-            this.nudYellows = new System.Windows.Forms.NumericUpDown();
-            this.label51 = new System.Windows.Forms.Label();
             this.tbName = new System.Windows.Forms.TextBox();
             this.lblName = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.ofdExcelFile = new System.Windows.Forms.OpenFileDialog();
+            this.btnFile = new System.Windows.Forms.Button();
+            this.tbFile = new System.Windows.Forms.TextBox();
+            this.btnSelectFile = new System.Windows.Forms.Button();
             this.gbA.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudA62)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudA61)).BeginInit();
@@ -281,12 +273,8 @@
             this.gbLast8.SuspendLayout();
             this.gbLast4.SuspendLayout();
             this.gbFinal.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudGoals)).BeginInit();
             this.groupBox1.SuspendLayout();
-            this.gbBonus.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudReds)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudOwnGoals)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudYellows)).BeginInit();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // gbA
@@ -1796,36 +1784,11 @@
             this.btnSubmit.Location = new System.Drawing.Point(368, 511);
             this.btnSubmit.Margin = new System.Windows.Forms.Padding(4);
             this.btnSubmit.Name = "btnSubmit";
-            this.btnSubmit.Size = new System.Drawing.Size(344, 198);
+            this.btnSubmit.Size = new System.Drawing.Size(440, 198);
             this.btnSubmit.TabIndex = 29;
             this.btnSubmit.Text = "Toto indienen";
             this.btnSubmit.UseVisualStyleBackColor = true;
             this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
-            // 
-            // label50
-            // 
-            this.label50.AutoSize = true;
-            this.label50.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label50.ForeColor = System.Drawing.Color.White;
-            this.label50.Location = new System.Drawing.Point(8, 20);
-            this.label50.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label50.Name = "label50";
-            this.label50.Size = new System.Drawing.Size(153, 18);
-            this.label50.TabIndex = 30;
-            this.label50.Text = "Aantal doelpunten WK";
-            // 
-            // nudGoals
-            // 
-            this.nudGoals.Location = new System.Drawing.Point(232, 20);
-            this.nudGoals.Margin = new System.Windows.Forms.Padding(4);
-            this.nudGoals.Maximum = new decimal(new int[] {
-            300,
-            0,
-            0,
-            0});
-            this.nudGoals.Name = "nudGoals";
-            this.nudGoals.Size = new System.Drawing.Size(95, 22);
-            this.nudGoals.TabIndex = 31;
             // 
             // groupBox1
             // 
@@ -1857,67 +1820,10 @@
             this.lblKOInfo.Text = "Vul hieronder de landen in waarvan je denkt dat ze \r\ndoorgaan naar de: achtste fi" +
     "nales, kwartfinales, \r\nhalve finales en de finale.";
             // 
-            // gbBonus
-            // 
-            this.gbBonus.Controls.Add(this.label56);
-            this.gbBonus.Controls.Add(this.label52);
-            this.gbBonus.Controls.Add(this.label54);
-            this.gbBonus.Controls.Add(this.label59);
-            this.gbBonus.Controls.Add(this.tbTopscorer);
-            this.gbBonus.Controls.Add(this.label58);
-            this.gbBonus.Controls.Add(this.label57);
-            this.gbBonus.Controls.Add(this.nudReds);
-            this.gbBonus.Controls.Add(this.label55);
-            this.gbBonus.Controls.Add(this.nudOwnGoals);
-            this.gbBonus.Controls.Add(this.label53);
-            this.gbBonus.Controls.Add(this.nudYellows);
-            this.gbBonus.Controls.Add(this.label51);
-            this.gbBonus.Controls.Add(this.label50);
-            this.gbBonus.Controls.Add(this.nudGoals);
-            this.gbBonus.ForeColor = System.Drawing.Color.White;
-            this.gbBonus.Location = new System.Drawing.Point(732, 510);
-            this.gbBonus.Margin = new System.Windows.Forms.Padding(4);
-            this.gbBonus.Name = "gbBonus";
-            this.gbBonus.Padding = new System.Windows.Forms.Padding(4);
-            this.gbBonus.Size = new System.Drawing.Size(684, 199);
-            this.gbBonus.TabIndex = 33;
-            this.gbBonus.TabStop = false;
-            this.gbBonus.Text = "Bonusvragen";
-            // 
-            // label56
-            // 
-            this.label56.AutoSize = true;
-            this.label56.Location = new System.Drawing.Point(336, 122);
-            this.label56.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label56.Name = "label56";
-            this.label56.Size = new System.Drawing.Size(273, 17);
-            this.label56.TabIndex = 45;
-            this.label56.Text = "Max 100, -20 voor elke rode kaart ernaast";
-            // 
-            // label52
-            // 
-            this.label52.AutoSize = true;
-            this.label52.Location = new System.Drawing.Point(336, 91);
-            this.label52.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label52.Name = "label52";
-            this.label52.Size = new System.Drawing.Size(267, 17);
-            this.label52.TabIndex = 44;
-            this.label52.Text = "Max 200, - 4 voor elke gele kaart ernaast";
-            // 
-            // label54
-            // 
-            this.label54.AutoSize = true;
-            this.label54.Location = new System.Drawing.Point(336, 57);
-            this.label54.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label54.Name = "label54";
-            this.label54.Size = new System.Drawing.Size(273, 17);
-            this.label54.TabIndex = 43;
-            this.label54.Text = "Max 100, -30 voor elke rode kaart ernaast";
-            // 
             // label59
             // 
             this.label59.AutoSize = true;
-            this.label59.Location = new System.Drawing.Point(513, 161);
+            this.label59.Location = new System.Drawing.Point(1355, 542);
             this.label59.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label59.Name = "label59";
             this.label59.Size = new System.Drawing.Size(32, 17);
@@ -1927,111 +1833,26 @@
             // tbTopscorer
             // 
             this.tbTopscorer.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
-            this.tbTopscorer.Location = new System.Drawing.Point(304, 158);
+            this.tbTopscorer.Location = new System.Drawing.Point(1105, 539);
             this.tbTopscorer.Margin = new System.Windows.Forms.Padding(4);
             this.tbTopscorer.Name = "tbTopscorer";
-            this.tbTopscorer.Size = new System.Drawing.Size(199, 22);
+            this.tbTopscorer.Size = new System.Drawing.Size(242, 22);
             this.tbTopscorer.TabIndex = 41;
             // 
             // label58
             // 
             this.label58.AutoSize = true;
             this.label58.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label58.Location = new System.Drawing.Point(8, 159);
+            this.label58.Location = new System.Drawing.Point(816, 540);
             this.label58.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label58.Name = "label58";
             this.label58.Size = new System.Drawing.Size(267, 18);
             this.label58.TabIndex = 40;
             this.label58.Text = "Topscorer (alleen achternaam invullen):";
             // 
-            // label57
-            // 
-            this.label57.AutoSize = true;
-            this.label57.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label57.ForeColor = System.Drawing.Color.White;
-            this.label57.Location = new System.Drawing.Point(8, 118);
-            this.label57.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label57.Name = "label57";
-            this.label57.Size = new System.Drawing.Size(164, 18);
-            this.label57.TabIndex = 37;
-            this.label57.Text = "Aantal rode kaarten WK";
-            // 
-            // nudReds
-            // 
-            this.nudReds.Location = new System.Drawing.Point(232, 118);
-            this.nudReds.Margin = new System.Windows.Forms.Padding(4);
-            this.nudReds.Maximum = new decimal(new int[] {
-            50,
-            0,
-            0,
-            0});
-            this.nudReds.Name = "nudReds";
-            this.nudReds.Size = new System.Drawing.Size(95, 22);
-            this.nudReds.TabIndex = 38;
-            // 
-            // label55
-            // 
-            this.label55.AutoSize = true;
-            this.label55.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label55.ForeColor = System.Drawing.Color.White;
-            this.label55.Location = new System.Drawing.Point(8, 58);
-            this.label55.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label55.Name = "label55";
-            this.label55.Size = new System.Drawing.Size(192, 18);
-            this.label55.TabIndex = 34;
-            this.label55.Text = "Aantal eigen doelpunten WK";
-            // 
-            // nudOwnGoals
-            // 
-            this.nudOwnGoals.Location = new System.Drawing.Point(232, 54);
-            this.nudOwnGoals.Margin = new System.Windows.Forms.Padding(4);
-            this.nudOwnGoals.Maximum = new decimal(new int[] {
-            50,
-            0,
-            0,
-            0});
-            this.nudOwnGoals.Name = "nudOwnGoals";
-            this.nudOwnGoals.Size = new System.Drawing.Size(95, 22);
-            this.nudOwnGoals.TabIndex = 35;
-            // 
-            // label53
-            // 
-            this.label53.AutoSize = true;
-            this.label53.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label53.ForeColor = System.Drawing.Color.White;
-            this.label53.Location = new System.Drawing.Point(8, 89);
-            this.label53.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label53.Name = "label53";
-            this.label53.Size = new System.Drawing.Size(161, 18);
-            this.label53.TabIndex = 33;
-            this.label53.Text = "Aantal gele kaarten WK";
-            // 
-            // nudYellows
-            // 
-            this.nudYellows.Location = new System.Drawing.Point(232, 86);
-            this.nudYellows.Margin = new System.Windows.Forms.Padding(4);
-            this.nudYellows.Maximum = new decimal(new int[] {
-            300,
-            0,
-            0,
-            0});
-            this.nudYellows.Name = "nudYellows";
-            this.nudYellows.Size = new System.Drawing.Size(95, 22);
-            this.nudYellows.TabIndex = 34;
-            // 
-            // label51
-            // 
-            this.label51.AutoSize = true;
-            this.label51.Location = new System.Drawing.Point(336, 22);
-            this.label51.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label51.Name = "label51";
-            this.label51.Size = new System.Drawing.Size(247, 17);
-            this.label51.TabIndex = 32;
-            this.label51.Text = "Max 200, -4 voor elk doelpunt ernaast";
-            // 
             // tbName
             // 
-            this.tbName.Location = new System.Drawing.Point(172, 73);
+            this.tbName.Location = new System.Drawing.Point(112, 29);
             this.tbName.Name = "tbName";
             this.tbName.Size = new System.Drawing.Size(176, 22);
             this.tbName.TabIndex = 34;
@@ -2040,22 +1861,72 @@
             // 
             this.lblName.AutoSize = true;
             this.lblName.ForeColor = System.Drawing.Color.White;
-            this.lblName.Location = new System.Drawing.Point(112, 74);
+            this.lblName.Location = new System.Drawing.Point(39, 32);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(49, 17);
             this.lblName.TabIndex = 35;
             this.lblName.Text = "Name:";
             // 
-            // TotoForm
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.btnSelectFile);
+            this.groupBox2.Controls.Add(this.tbFile);
+            this.groupBox2.Controls.Add(this.btnFile);
+            this.groupBox2.ForeColor = System.Drawing.Color.White;
+            this.groupBox2.Location = new System.Drawing.Point(23, 74);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(309, 347);
+            this.groupBox2.TabIndex = 43;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Input from excel file";
+            // 
+            // ofdExcelFile
+            // 
+            this.ofdExcelFile.FileName = "openFileDialog1";
+            // 
+            // btnFile
+            // 
+            this.btnFile.ForeColor = System.Drawing.Color.Black;
+            this.btnFile.Location = new System.Drawing.Point(37, 129);
+            this.btnFile.Name = "btnFile";
+            this.btnFile.Size = new System.Drawing.Size(217, 38);
+            this.btnFile.TabIndex = 44;
+            this.btnFile.Text = "Read From File";
+            this.btnFile.UseVisualStyleBackColor = true;
+            this.btnFile.Click += new System.EventHandler(this.btnFile_Click);
+            // 
+            // tbFile
+            // 
+            this.tbFile.Location = new System.Drawing.Point(37, 101);
+            this.tbFile.Name = "tbFile";
+            this.tbFile.ReadOnly = true;
+            this.tbFile.Size = new System.Drawing.Size(217, 22);
+            this.tbFile.TabIndex = 44;
+            // 
+            // btnSelectFile
+            // 
+            this.btnSelectFile.ForeColor = System.Drawing.Color.Black;
+            this.btnSelectFile.Location = new System.Drawing.Point(37, 57);
+            this.btnSelectFile.Name = "btnSelectFile";
+            this.btnSelectFile.Size = new System.Drawing.Size(217, 36);
+            this.btnSelectFile.TabIndex = 44;
+            this.btnSelectFile.Text = "Select File";
+            this.btnSelectFile.UseVisualStyleBackColor = true;
+            this.btnSelectFile.Click += new System.EventHandler(this.btnSelectFile_Click);
+            // 
+            // gbFileInput
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSeaGreen;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1788, 726);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.label58);
+            this.Controls.Add(this.label59);
             this.Controls.Add(this.lblName);
+            this.Controls.Add(this.tbTopscorer);
             this.Controls.Add(this.tbName);
-            this.Controls.Add(this.gbBonus);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnSubmit);
             this.Controls.Add(this.gbF);
@@ -2065,7 +1936,7 @@
             this.Controls.Add(this.gbB);
             this.Controls.Add(this.gbA);
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "TotoForm";
+            this.Name = "gbFileInput";
             this.Text = "TotoForm";
             this.gbA.ResumeLayout(false);
             this.gbA.PerformLayout();
@@ -2159,14 +2030,10 @@
             this.gbLast4.PerformLayout();
             this.gbFinal.ResumeLayout(false);
             this.gbFinal.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudGoals)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.gbBonus.ResumeLayout(false);
-            this.gbBonus.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudReds)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudOwnGoals)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudYellows)).EndInit();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2325,25 +2192,17 @@
         private System.Windows.Forms.TextBox tbChampion;
         private System.Windows.Forms.Label label49;
         private System.Windows.Forms.Button btnSubmit;
-        private System.Windows.Forms.Label label50;
-        private System.Windows.Forms.NumericUpDown nudGoals;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.GroupBox gbBonus;
         private System.Windows.Forms.Label label59;
         private System.Windows.Forms.TextBox tbTopscorer;
         private System.Windows.Forms.Label label58;
-        private System.Windows.Forms.Label label57;
-        private System.Windows.Forms.NumericUpDown nudReds;
-        private System.Windows.Forms.Label label55;
-        private System.Windows.Forms.NumericUpDown nudOwnGoals;
-        private System.Windows.Forms.Label label53;
-        private System.Windows.Forms.NumericUpDown nudYellows;
-        private System.Windows.Forms.Label label51;
-        private System.Windows.Forms.Label label54;
-        private System.Windows.Forms.Label label56;
-        private System.Windows.Forms.Label label52;
         private System.Windows.Forms.Label lblKOInfo;
         private System.Windows.Forms.TextBox tbName;
         private System.Windows.Forms.Label lblName;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Button btnSelectFile;
+        private System.Windows.Forms.TextBox tbFile;
+        private System.Windows.Forms.Button btnFile;
+        private System.Windows.Forms.OpenFileDialog ofdExcelFile;
     }
 }

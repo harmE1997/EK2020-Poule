@@ -27,7 +27,7 @@ namespace Wk2018_Poule
 
         private void btnNewPlayer_Click(object sender, EventArgs e)
         {
-            TotoForm toto = new TotoForm();
+            gbFileInput toto = new gbFileInput();
             toto.Show();
             toto.manager = manager;
         }
@@ -54,7 +54,7 @@ namespace Wk2018_Poule
                 player = host.GetHost();
             }
 
-            TotoForm totoform = new TotoForm();
+            gbFileInput totoform = new gbFileInput();
             totoform.loadPlayer(player);
             totoform.Show();
             totoform.manager = manager;

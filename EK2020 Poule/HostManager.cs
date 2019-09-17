@@ -26,9 +26,8 @@ namespace Wk2018_Poule
         {
             PoolMatchResult[] matches = new PoolMatchResult[48];
             KnockOutPhase ko = new KnockOutPhase();
-            BonusQuestions answers = new BonusQuestions(0, 0, 0, 0, "l");
 
-            host = new Player("Host", matches, ko, answers);
+            host = new Player("Host", matches, ko, "");
         }
 
         private void LoadHost()
