@@ -37,6 +37,7 @@
             this.gbExistingplayer = new System.Windows.Forms.GroupBox();
             this.btnRemove = new System.Windows.Forms.Button();
             this.btnScheddule = new System.Windows.Forms.Button();
+            this.btnCheck = new System.Windows.Forms.Button();
             this.gbExistingplayer.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -134,6 +135,16 @@
             this.btnScheddule.UseVisualStyleBackColor = true;
             this.btnScheddule.Click += new System.EventHandler(this.btnScheddule_Click);
             // 
+            // btnCheck
+            // 
+            this.btnCheck.Location = new System.Drawing.Point(465, 92);
+            this.btnCheck.Name = "btnCheck";
+            this.btnCheck.Size = new System.Drawing.Size(204, 30);
+            this.btnCheck.TabIndex = 10;
+            this.btnCheck.Text = "Check All";
+            this.btnCheck.UseVisualStyleBackColor = true;
+            this.btnCheck.Click += new System.EventHandler(this.btnCheck_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -141,6 +152,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(682, 414);
+            this.Controls.Add(this.btnCheck);
             this.Controls.Add(this.btnScheddule);
             this.Controls.Add(this.gbExistingplayer);
             this.Controls.Add(this.btnNewPlayer);
@@ -164,6 +176,7 @@
         private System.Windows.Forms.GroupBox gbExistingplayer;
         private System.Windows.Forms.Button btnScheddule;
         private System.Windows.Forms.Button btnRemove;
+        private System.Windows.Forms.Button btnCheck;
     }
 }
 

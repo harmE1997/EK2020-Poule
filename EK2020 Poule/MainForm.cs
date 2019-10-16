@@ -42,18 +42,22 @@ namespace Wk2018_Poule
         {
             string name = tbPlayerName.Text;
             manager.LoadPlayers();
-            Player player = manager.FindPlayerByName(name);
-
-            if (player == null)
-            {
-                MessageBox.Show("Deze speler bestaat niet. Gebruik een andere naam");
-            }
-
-            else if (name == "Host")
+            Player player;
+            if (name == "Host")
             {
                 player = host.GetHost();
             }
 
+            else
+            {
+                player = manager.FindPlayerByName(name);
+
+                if (player == null)
+                {
+                    MessageBox.Show("Deze speler bestaat niet. Gebruik een andere naam");
+                }
+            }
+            
             gbFileInput totoform = new gbFileInput();
             totoform.loadPlayer(player);
             totoform.Show();
@@ -90,5 +94,9 @@ namespace Wk2018_Poule
             }
         }
 
+        private void btnCheck_Click(object sender, EventArgs e)
+        {
+            manager.checkAllPlayers(host.GetHost());
+        }
     }
 }

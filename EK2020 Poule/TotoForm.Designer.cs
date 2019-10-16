@@ -187,10 +187,10 @@
             this.tbName = new System.Windows.Forms.TextBox();
             this.lblName = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.ofdExcelFile = new System.Windows.Forms.OpenFileDialog();
-            this.btnFile = new System.Windows.Forms.Button();
-            this.tbFile = new System.Windows.Forms.TextBox();
             this.btnSelectFile = new System.Windows.Forms.Button();
+            this.tbFile = new System.Windows.Forms.TextBox();
+            this.btnFile = new System.Windows.Forms.Button();
+            this.ofdExcelFile = new System.Windows.Forms.OpenFileDialog();
             this.gbA.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudA62)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudA61)).BeginInit();
@@ -1846,9 +1846,9 @@
             this.label58.Location = new System.Drawing.Point(816, 540);
             this.label58.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label58.Name = "label58";
-            this.label58.Size = new System.Drawing.Size(267, 18);
+            this.label58.Size = new System.Drawing.Size(215, 18);
             this.label58.TabIndex = 40;
-            this.label58.Text = "Topscorer (alleen achternaam invullen):";
+            this.label58.Text = "Topscorer (alleen achternaam):";
             // 
             // tbName
             // 
@@ -1880,9 +1880,24 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Input from excel file";
             // 
-            // ofdExcelFile
+            // btnSelectFile
             // 
-            this.ofdExcelFile.FileName = "openFileDialog1";
+            this.btnSelectFile.ForeColor = System.Drawing.Color.Black;
+            this.btnSelectFile.Location = new System.Drawing.Point(37, 57);
+            this.btnSelectFile.Name = "btnSelectFile";
+            this.btnSelectFile.Size = new System.Drawing.Size(217, 36);
+            this.btnSelectFile.TabIndex = 44;
+            this.btnSelectFile.Text = "Select File";
+            this.btnSelectFile.UseVisualStyleBackColor = true;
+            this.btnSelectFile.Click += new System.EventHandler(this.btnSelectFile_Click);
+            // 
+            // tbFile
+            // 
+            this.tbFile.Location = new System.Drawing.Point(37, 101);
+            this.tbFile.Name = "tbFile";
+            this.tbFile.ReadOnly = true;
+            this.tbFile.Size = new System.Drawing.Size(217, 22);
+            this.tbFile.TabIndex = 44;
             // 
             // btnFile
             // 
@@ -1895,24 +1910,9 @@
             this.btnFile.UseVisualStyleBackColor = true;
             this.btnFile.Click += new System.EventHandler(this.btnFile_Click);
             // 
-            // tbFile
+            // ofdExcelFile
             // 
-            this.tbFile.Location = new System.Drawing.Point(37, 101);
-            this.tbFile.Name = "tbFile";
-            this.tbFile.ReadOnly = true;
-            this.tbFile.Size = new System.Drawing.Size(217, 22);
-            this.tbFile.TabIndex = 44;
-            // 
-            // btnSelectFile
-            // 
-            this.btnSelectFile.ForeColor = System.Drawing.Color.Black;
-            this.btnSelectFile.Location = new System.Drawing.Point(37, 57);
-            this.btnSelectFile.Name = "btnSelectFile";
-            this.btnSelectFile.Size = new System.Drawing.Size(217, 36);
-            this.btnSelectFile.TabIndex = 44;
-            this.btnSelectFile.Text = "Select File";
-            this.btnSelectFile.UseVisualStyleBackColor = true;
-            this.btnSelectFile.Click += new System.EventHandler(this.btnSelectFile_Click);
+            this.ofdExcelFile.FileName = "openFileDialog1";
             // 
             // gbFileInput
             // 

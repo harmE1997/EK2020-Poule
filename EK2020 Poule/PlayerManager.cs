@@ -17,7 +17,7 @@ namespace Wk2018_Poule
         public PlayerManager()
         {
             Players = new List<Player>();
-            FileName = "WK2018";
+            FileName = "EK2020";
         }
 
         public void SavePlayers()

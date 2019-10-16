@@ -16,6 +16,7 @@ namespace Wk2018_Poule
         private Dictionary<KOKeys, TextBox[]> kolocs;
         private NumericUpDown[] NUDs = new NumericUpDown[96];
         public PlayerManager manager;
+        private HostManager hostmanager;
         public gbFileInput()
         {
             InitializeComponent();
@@ -54,20 +55,27 @@ namespace Wk2018_Poule
                 }
             }
 
-            try
+            Player player = new Player(tbName.Text, matches, KO, tbTopscorer.Text);
+            if (tbName.Text == "Host")
             {
-                manager.removePlayer(tbName.Text);
-                Player player = new Player(tbName.Text, matches, KO, tbTopscorer.Text);
-                manager.AddPlayer(player);
-
+                hostmanager.SetHost(player);
             }
 
-            catch (ArgumentNullException)
+            else
             {
-                MessageBox.Show("Veld niet ingevuld. Controleer of alle velden zijn ingevuld en probeer opnieuw.");
+                try
+                {
+                    manager.removePlayer(tbName.Text);                    
+                    manager.AddPlayer(player);
+                }
+
+                catch (ArgumentNullException)
+                {
+                    MessageBox.Show("Veld niet ingevuld. Controleer of alle velden zijn ingevuld en probeer opnieuw.");
+                }
+                manager.SavePlayers();
             }
 
-            manager.SavePlayers();
             this.Hide();
             this.Dispose();
         }
@@ -83,9 +91,10 @@ namespace Wk2018_Poule
                 x += 2;
             }
 
-            int i = 0;
+            
             foreach (var stage in player.KnockOut.Stages)
             {
+                int i = 0;
                 foreach (var team in stage.Value.teams)
                 {
                     kolocs[stage.Key][i].Text = team;
@@ -109,83 +118,12 @@ namespace Wk2018_Poule
                 {KOKeys.champ, new TextBox[]{tbChampion } }
             };
 
-            NUDs[0] = nudA11;
-            NUDs[1] = nudA12;
-            NUDs[2] = nudA21;
-            NUDs[3] = nudA22;
-            NUDs[4] = nudA31;
-            NUDs[5] = nudA32;
-            NUDs[6] = nudA41;
-            NUDs[7] = nudA42;
-            NUDs[8] = nudA51;
-            NUDs[9] = nudA52;
-            NUDs[10] = nudA61;
-            NUDs[11] = nudA62;
-
-            NUDs[12] = nudB11;
-            NUDs[13] = nudB12;
-            NUDs[14] = nudB21;
-            NUDs[15] = nudB22;
-            NUDs[16] = nudB31;
-            NUDs[17] = nudB32;
-            NUDs[18] = nudB41;
-            NUDs[19] = nudB42;
-            NUDs[20] = nudB51;
-            NUDs[21] = nudB52;
-            NUDs[22] = nudB61;
-            NUDs[23] = nudB62;
-
-            NUDs[24] = nudC11;
-            NUDs[25] = nudC12;
-            NUDs[26] = nudC21;
-            NUDs[27] = nudC22;
-            NUDs[28] = nudC31;
-            NUDs[29] = nudC32;
-            NUDs[30] = nudC41;
-            NUDs[31] = nudC42;
-            NUDs[32] = nudC51;
-            NUDs[33] = nudC52;
-            NUDs[34] = nudC61;
-            NUDs[35] = nudC62;
-
-            NUDs[36] = nudD11;
-            NUDs[37] = nudD12;
-            NUDs[38] = nudD21;
-            NUDs[39] = nudD22;
-            NUDs[40] = nudD31;
-            NUDs[41] = nudD32;
-            NUDs[42] = nudD41;
-            NUDs[43] = nudD42;
-            NUDs[44] = nudD51;
-            NUDs[45] = nudD52;
-            NUDs[46] = nudD61;
-            NUDs[47] = nudD62;
-
-            NUDs[48] = nudE11;
-            NUDs[49] = nudE12;
-            NUDs[50] = nudE21;
-            NUDs[51] = nudE22;
-            NUDs[52] = nudE31;
-            NUDs[53] = nudE32;
-            NUDs[54] = nudE41;
-            NUDs[55] = nudE42;
-            NUDs[56] = nudE51;
-            NUDs[57] = nudE52;
-            NUDs[58] = nudE61;
-            NUDs[59] = nudE62;
-
-            NUDs[60] = nudF11;
-            NUDs[61] = nudF12;
-            NUDs[62] = nudF21;
-            NUDs[63] = nudF22;
-            NUDs[64] = nudF31;
-            NUDs[65] = nudF32;
-            NUDs[66] = nudF41;
-            NUDs[67] = nudF42;
-            NUDs[68] = nudF51;
-            NUDs[69] = nudF52;
-            NUDs[70] = nudF61;
-            NUDs[71] = nudF62;
+            NUDs = new NumericUpDown[72] { nudA11, nudA12, nudA21, nudA22, nudA31, nudA32, nudA41, nudA42, nudA51, nudA52, nudA61, nudA62,
+            nudB11, nudB12, nudB21, nudB22, nudB31, nudB32, nudB41, nudB42, nudB51, nudB52, nudB61,nudB62,
+            nudC11, nudC12, nudC21, nudC22, nudC31, nudC32, nudC41, nudC42, nudC51, nudC52, nudC61, nudC62,
+            nudD11, nudD12, nudD21, nudD22, nudD31, nudD32, nudD41, nudD42, nudD51, nudD52, nudD61, nudD62,
+            nudE11, nudE12, nudE21, nudE22, nudE31, nudE32, nudE41, nudE42, nudE51, nudE52, nudE61, nudE62,
+            nudF11, nudF12, nudF21, nudF22, nudF31, nudF32, nudF41, nudF42, nudF51, nudF52, nudF61, nudF62 };
         }
 
         private void btnSelectFile_Click(object sender, EventArgs e)
@@ -209,8 +147,8 @@ namespace Wk2018_Poule
         {
             string file = tbFile.Text;
             ExcelManager em = new ExcelManager();
-            ExcelReadSettings settings = new ExcelReadSettings(); 
-            Player player = new Player(tbName.Text, em.ReadGroupPhase(file,1, settings), em.readKnockout(file, 1, settings), em.readTopscorer(file, 1));
+            ExcelReadSettings settings = new ExcelReadSettings();
+            Player player = new Player(tbName.Text, em.ReadGroupPhase(file, 1, settings), em.readKnockout(file, 1, settings), em.readTopscorer(file, 1));
             manager.removePlayer(tbName.Text);
             manager.AddPlayer(player);
             manager.SavePlayers();

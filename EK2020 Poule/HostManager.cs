@@ -10,24 +10,41 @@ namespace Wk2018_Poule
 {
     class HostManager
     {
-        private Player host;
+        private Player Host;
+        public HostManager()
+        {
+            SetHost();
+        }
 
         public Player GetHost()
         {
-            if (host == null)
+            return Host;
+        }
+
+        public void SetHost(Player host = null)
+        {
+            if (Host == null && host == null)
             {
                 LoadHost();
             }
 
-            return host;
+            else if (host != null)
+            {
+                Host = host;
+                saveHost();
+            }
         }
 
         private void createHost()
         {
             PoolMatchResult[] matches = new PoolMatchResult[48];
+            for (int i=0; i<48; i++)
+            {
+                matches[i] = new PoolMatchResult(99,99);
+            }
             KnockOutPhase ko = new KnockOutPhase();
 
-            host = new Player("Host", matches, ko, "");
+            Host = new Player("Host", matches, ko, "");
         }
 
         private void LoadHost()
@@ -36,7 +53,7 @@ namespace Wk2018_Poule
             {
                 FileStream stream = new FileStream("Host", FileMode.Open);
                 BinaryFormatter Formatter = new BinaryFormatter();
-                host = (Player)Formatter.Deserialize(stream);
+                Host = (Player)Formatter.Deserialize(stream);
                 stream.Close();
             }
 
@@ -51,7 +68,7 @@ namespace Wk2018_Poule
         {
             FileStream stream = new FileStream("Host", FileMode.Create);
             BinaryFormatter Formatter = new BinaryFormatter();
-            Formatter.Serialize(stream, host);
+            Formatter.Serialize(stream, Host);
             stream.Close();
         }
     }

@@ -15,6 +15,7 @@ namespace Wk2018_Poule
         champ
     }
 
+    [Serializable]
     public struct Stage
     {
         public int award;
