@@ -36,7 +36,6 @@
             this.lblName = new System.Windows.Forms.Label();
             this.gbExistingplayer = new System.Windows.Forms.GroupBox();
             this.btnRemove = new System.Windows.Forms.Button();
-            this.btnScheddule = new System.Windows.Forms.Button();
             this.btnCheck = new System.Windows.Forms.Button();
             this.gbExistingplayer.SuspendLayout();
             this.SuspendLayout();
@@ -124,20 +123,9 @@
             this.btnRemove.UseVisualStyleBackColor = true;
             this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
             // 
-            // btnScheddule
-            // 
-            this.btnScheddule.Location = new System.Drawing.Point(465, 54);
-            this.btnScheddule.Margin = new System.Windows.Forms.Padding(4);
-            this.btnScheddule.Name = "btnScheddule";
-            this.btnScheddule.Size = new System.Drawing.Size(204, 31);
-            this.btnScheddule.TabIndex = 9;
-            this.btnScheddule.Text = "Toon Speelschema";
-            this.btnScheddule.UseVisualStyleBackColor = true;
-            this.btnScheddule.Click += new System.EventHandler(this.btnScheddule_Click);
-            // 
             // btnCheck
             // 
-            this.btnCheck.Location = new System.Drawing.Point(465, 92);
+            this.btnCheck.Location = new System.Drawing.Point(466, 53);
             this.btnCheck.Name = "btnCheck";
             this.btnCheck.Size = new System.Drawing.Size(204, 30);
             this.btnCheck.TabIndex = 10;
@@ -153,7 +141,6 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(682, 414);
             this.Controls.Add(this.btnCheck);
-            this.Controls.Add(this.btnScheddule);
             this.Controls.Add(this.gbExistingplayer);
             this.Controls.Add(this.btnNewPlayer);
             this.Controls.Add(this.btnRanking);
@@ -174,7 +161,6 @@
         private System.Windows.Forms.Button btnRanking;
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.GroupBox gbExistingplayer;
-        private System.Windows.Forms.Button btnScheddule;
         private System.Windows.Forms.Button btnRemove;
         private System.Windows.Forms.Button btnCheck;
     }

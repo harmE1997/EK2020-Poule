@@ -50,7 +50,7 @@ namespace Wk2018_Poule
             xlRange = xlWorksheet.UsedRange;
         }
 
-        public IEnumerable<int> ExportPlayersToExcel(string filename, int sheet, List<Player> Players, int week)
+        public IEnumerable<int> ExportPlayersToExcel(string filename, int sheet, List<Player> Players)
         {
             Initialise(filename, sheet);
             int y = 2;
@@ -60,6 +60,7 @@ namespace Wk2018_Poule
                 y++;
                 yield return y;
             }
+            Clean();
         }
 
         public PoolMatchResult[] ReadGroupPhase(string filename, int sheet, ExcelReadSettings Settings)

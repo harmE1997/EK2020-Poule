@@ -41,5 +41,19 @@ namespace Wk2018_Poule
                     lbRanking.Items.Add(player.playerToString());          
             }
         }
+
+        private void btnRanking_Click(object sender, EventArgs e)
+        {
+            proBarRanking.Maximum = manager.Players.Count();
+            proBarRanking.Value = 0;
+            if (ofdRanking.ShowDialog() == DialogResult.OK)
+            {
+                ExcelManager m = new ExcelManager();
+                foreach (int i in m.ExportPlayersToExcel(ofdRanking.FileName, 2, manager.Players))
+                {
+                    proBarRanking.Value = i;
+                }
+            }
+        }
     }
 }

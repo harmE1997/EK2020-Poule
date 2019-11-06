@@ -1,0 +1,5 @@
+code voor gebruik methode in dictionary
+
+Dictionary<string, Action> coms = new Dictionary<string, Action>();
+            coms.Add("1", manager.LoadPlayers);
+            coms["1"]();

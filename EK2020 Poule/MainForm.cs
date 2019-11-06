@@ -65,12 +65,6 @@ namespace Wk2018_Poule
 
         }
 
-        private void btnScheddule_Click(object sender, EventArgs e)
-        {
-            SchedduleForm scheddule = new SchedduleForm(host.GetHost());
-            scheddule.Show();
-        }
-
         private void btnRemove_Click(object sender, EventArgs e)
         {
             string name = tbPlayerName.Text;
