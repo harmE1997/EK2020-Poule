@@ -21,7 +21,7 @@ namespace Wk2018_Poule
 
         //KO Phase
         public int KOColumn = 10;
-        public int KOStart = 65;
+        public int KOStart = 66;
         public int KOSize = 8;
         public int Phases = 4;
 
@@ -119,7 +119,7 @@ namespace Wk2018_Poule
                 settings.KOSize /= 2;
                 phase++;
             }
-            string champ = xlRange.Cells[93, 4].value2;
+            string champ = xlRange.Cells[94, 5].value2;
             if (champ != null)
             {
                 ko.Stages.ElementAt(4).Value.teams.Add(champ.ToLower());
@@ -131,9 +131,17 @@ namespace Wk2018_Poule
         public string readTopscorer(string filename, int sheet)
         {
             Initialise(filename, sheet);
-            string topscorer = xlRange.Cells[94, 4].value2;
+            string topscorer = xlRange.Cells[95, 5].value2;
             Clean();
             return topscorer.ToLower();            
+        }
+
+        public string readDutchEnd(string filename, int sheet)
+        {
+            Initialise(filename, sheet);
+            string topscorer = xlRange.Cells[96, 5].value2;
+            Clean();
+            return topscorer.ToLower();
         }
 
         public void Clean()

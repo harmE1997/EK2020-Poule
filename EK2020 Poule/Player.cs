@@ -13,10 +13,11 @@ namespace Wk2018_Poule
         public PoolMatchResult[] Results { get; private set; }
         public KnockOutPhase KnockOut { get; private set; }
         public string Topscorer { get; private set; }
+        public string DutchEnd { get; private set; }
         public int Score { get; private set; }
         public int Ranking { get; private set; }
 
-        public Player(string name, PoolMatchResult[] poolmatches, KnockOutPhase KO, string topscorer)
+        public Player(string name, PoolMatchResult[] poolmatches, KnockOutPhase KO, string topscorer, string dutchend)
         {
             if (name != "Host")
             {
@@ -36,6 +37,7 @@ namespace Wk2018_Poule
             Results = poolmatches;
             KnockOut = KO;
             Topscorer = topscorer;
+            DutchEnd = dutchend;
         }
 
         public void setRanking(int rank)

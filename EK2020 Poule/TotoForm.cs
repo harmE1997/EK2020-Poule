@@ -11,27 +11,17 @@ using System.IO;
 
 namespace Wk2018_Poule
 {
-    public partial class gbFileInput : Form
+    public partial class TotoForm : Form
     {
         private Dictionary<KOKeys, TextBox[]> kolocs;
         private NumericUpDown[] NUDs = new NumericUpDown[96];
         public PlayerManager manager;
-        private HostManager hostmanager;
-        public gbFileInput()
+        public HostManager hostmanager;
+        public TotoForm()
         {
             InitializeComponent();
             fillArrays();
             btnSubmit.Enabled = true;
-            manager = new PlayerManager();
-            try
-            {
-                manager.LoadPlayers();
-            }
-
-            catch (FileNotFoundException)
-            {
-
-            }
         }
 
         private void btnSubmit_Click(object sender, EventArgs e)
@@ -55,7 +45,7 @@ namespace Wk2018_Poule
                 }
             }
 
-            Player player = new Player(tbName.Text, matches, KO, tbTopscorer.Text);
+            Player player = new Player(tbName.Text, matches, KO, tbTopscorer.Text, tbDutch.Text);
             if (tbName.Text == "Host")
             {
                 hostmanager.SetHost(player);
@@ -148,7 +138,7 @@ namespace Wk2018_Poule
             string file = tbFile.Text;
             ExcelManager em = new ExcelManager();
             ExcelReadSettings settings = new ExcelReadSettings();
-            Player player = new Player(tbName.Text, em.ReadGroupPhase(file, 1, settings), em.readKnockout(file, 1, settings), em.readTopscorer(file, 1));
+            Player player = new Player(tbName.Text, em.ReadGroupPhase(file, 1, settings), em.readKnockout(file, 1, settings), em.readTopscorer(file, 1), em.readDutchEnd(file,1));
             manager.removePlayer(tbName.Text);
             manager.AddPlayer(player);
             manager.SavePlayers();

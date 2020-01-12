@@ -27,7 +27,7 @@ namespace Wk2018_Poule
 
         private void btnNewPlayer_Click(object sender, EventArgs e)
         {
-            gbFileInput toto = new gbFileInput();
+            TotoForm toto = new TotoForm();
             toto.Show();
             toto.manager = manager;
         }
@@ -43,26 +43,26 @@ namespace Wk2018_Poule
             string name = tbPlayerName.Text;
             manager.LoadPlayers();
             Player player;
+            TotoForm totoform = new TotoForm();
             if (name == "Host")
             {
                 player = host.GetHost();
+                totoform.hostmanager = host;
             }
 
             else
             {
                 player = manager.FindPlayerByName(name);
-
+                totoform.manager = manager;
                 if (player == null)
                 {
                     MessageBox.Show("Deze speler bestaat niet. Gebruik een andere naam");
+                    return;
                 }
-            }
+            }           
             
-            gbFileInput totoform = new gbFileInput();
-            totoform.loadPlayer(player);
+            totoform.loadPlayer(player);           
             totoform.Show();
-            totoform.manager = manager;
-
         }
 
         private void btnRemove_Click(object sender, EventArgs e)

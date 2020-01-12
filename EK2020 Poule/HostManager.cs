@@ -8,7 +8,7 @@ using System.Runtime.Serialization.Formatters.Binary;
 
 namespace Wk2018_Poule
 {
-    class HostManager
+    public class HostManager
     {
         private Player Host;
         public HostManager()
@@ -44,7 +44,7 @@ namespace Wk2018_Poule
             }
             KnockOutPhase ko = new KnockOutPhase();
 
-            Host = new Player("Host", matches, ko, "");
+            Host = new Player("Host", matches, ko, "", "");
         }
 
         private void LoadHost()

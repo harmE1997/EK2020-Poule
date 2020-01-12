@@ -1,6 +1,6 @@
 ﻿namespace Wk2018_Poule
 {
-    partial class gbFileInput
+    partial class TotoForm
     {
         /// <summary>
         /// Required designer variable.
@@ -186,11 +186,14 @@
             this.label58 = new System.Windows.Forms.Label();
             this.tbName = new System.Windows.Forms.TextBox();
             this.lblName = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.gbFileInput = new System.Windows.Forms.GroupBox();
             this.btnSelectFile = new System.Windows.Forms.Button();
             this.tbFile = new System.Windows.Forms.TextBox();
             this.btnFile = new System.Windows.Forms.Button();
             this.ofdExcelFile = new System.Windows.Forms.OpenFileDialog();
+            this.label37 = new System.Windows.Forms.Label();
+            this.label38 = new System.Windows.Forms.Label();
+            this.tbDutch = new System.Windows.Forms.TextBox();
             this.gbA.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudA62)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudA61)).BeginInit();
@@ -274,7 +277,7 @@
             this.gbLast4.SuspendLayout();
             this.gbFinal.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
+            this.gbFileInput.SuspendLayout();
             this.SuspendLayout();
             // 
             // gbA
@@ -1828,7 +1831,7 @@
             this.label59.Name = "label59";
             this.label59.Size = new System.Drawing.Size(32, 17);
             this.label59.TabIndex = 42;
-            this.label59.Text = "100";
+            this.label59.Text = "200";
             // 
             // tbTopscorer
             // 
@@ -1867,18 +1870,18 @@
             this.lblName.TabIndex = 35;
             this.lblName.Text = "Name:";
             // 
-            // groupBox2
+            // gbFileInput
             // 
-            this.groupBox2.Controls.Add(this.btnSelectFile);
-            this.groupBox2.Controls.Add(this.tbFile);
-            this.groupBox2.Controls.Add(this.btnFile);
-            this.groupBox2.ForeColor = System.Drawing.Color.White;
-            this.groupBox2.Location = new System.Drawing.Point(23, 74);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(309, 347);
-            this.groupBox2.TabIndex = 43;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Input from excel file";
+            this.gbFileInput.Controls.Add(this.btnSelectFile);
+            this.gbFileInput.Controls.Add(this.tbFile);
+            this.gbFileInput.Controls.Add(this.btnFile);
+            this.gbFileInput.ForeColor = System.Drawing.Color.White;
+            this.gbFileInput.Location = new System.Drawing.Point(23, 74);
+            this.gbFileInput.Name = "gbFileInput";
+            this.gbFileInput.Size = new System.Drawing.Size(309, 347);
+            this.gbFileInput.TabIndex = 43;
+            this.gbFileInput.TabStop = false;
+            this.gbFileInput.Text = "Input from excel file";
             // 
             // btnSelectFile
             // 
@@ -1914,14 +1917,47 @@
             // 
             this.ofdExcelFile.FileName = "openFileDialog1";
             // 
-            // gbFileInput
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label37.Location = new System.Drawing.Point(816, 570);
+            this.label37.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(167, 18);
+            this.label37.TabIndex = 44;
+            this.label37.Text = "Eindpunt van Nederland:";
+            // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.Location = new System.Drawing.Point(1355, 572);
+            this.label38.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(32, 17);
+            this.label38.TabIndex = 46;
+            this.label38.Text = "100";
+            // 
+            // tbDutch
+            // 
+            this.tbDutch.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
+            this.tbDutch.Location = new System.Drawing.Point(1105, 569);
+            this.tbDutch.Margin = new System.Windows.Forms.Padding(4);
+            this.tbDutch.Name = "tbDutch";
+            this.tbDutch.Size = new System.Drawing.Size(242, 22);
+            this.tbDutch.TabIndex = 45;
+            // 
+            // TotoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSeaGreen;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1788, 726);
-            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.label37);
+            this.Controls.Add(this.label38);
+            this.Controls.Add(this.tbDutch);
+            this.Controls.Add(this.gbFileInput);
             this.Controls.Add(this.label58);
             this.Controls.Add(this.label59);
             this.Controls.Add(this.lblName);
@@ -1936,7 +1972,7 @@
             this.Controls.Add(this.gbB);
             this.Controls.Add(this.gbA);
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "gbFileInput";
+            this.Name = "TotoForm";
             this.Text = "TotoForm";
             this.gbA.ResumeLayout(false);
             this.gbA.PerformLayout();
@@ -2032,8 +2068,8 @@
             this.gbFinal.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
+            this.gbFileInput.ResumeLayout(false);
+            this.gbFileInput.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2199,10 +2235,13 @@
         private System.Windows.Forms.Label lblKOInfo;
         private System.Windows.Forms.TextBox tbName;
         private System.Windows.Forms.Label lblName;
-        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox gbFileInput;
         private System.Windows.Forms.Button btnSelectFile;
         private System.Windows.Forms.TextBox tbFile;
         private System.Windows.Forms.Button btnFile;
         private System.Windows.Forms.OpenFileDialog ofdExcelFile;
+        private System.Windows.Forms.Label label37;
+        private System.Windows.Forms.Label label38;
+        private System.Windows.Forms.TextBox tbDutch;
     }
 }

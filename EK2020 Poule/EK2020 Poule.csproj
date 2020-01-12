@@ -141,7 +141,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="EK 2020 icon.ico" />
-    <Content Include="EK 2020 Logo.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
