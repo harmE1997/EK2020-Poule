@@ -88,6 +88,11 @@ namespace Wk2018_Poule
 
             if (Topscorer == host.Topscorer)
             {
+                Score += 200;
+            }
+
+            if (DutchEnd == host.DutchEnd)
+            {
                 Score += 100;
             }
             

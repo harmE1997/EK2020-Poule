@@ -31,11 +31,11 @@ namespace Wk2018_Poule
         {
             Stages = new Dictionary<KOKeys, Stage>()
             {
-                {KOKeys.sixteen, new Stage() { award = 25, teams = new List<string>() } },
-                {KOKeys.quarter, new Stage() { award = 50, teams = new List<string>()} },
-                {KOKeys.semi, new Stage() { award = 100, teams = new List<string>() } },
-                {KOKeys.final, new Stage() { award = 200, teams = new List<string>() } },
-                {KOKeys.champ, new Stage() { award = 250, teams = new List<string>() } }
+                {KOKeys.sixteen, new Stage() { award = 60, teams = new List<string>() } },
+                {KOKeys.quarter, new Stage() { award = 60, teams = new List<string>()} },
+                {KOKeys.semi, new Stage() { award = 60, teams = new List<string>() } },
+                {KOKeys.final, new Stage() { award = 60, teams = new List<string>() } },
+                {KOKeys.champ, new Stage() { award = 60, teams = new List<string>() } }
             };
         }
 
