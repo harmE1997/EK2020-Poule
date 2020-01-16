@@ -7,7 +7,7 @@ using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Runtime.Serialization;
 
-namespace Wk2018_Poule
+namespace EK2020_Poule
 {
     [Serializable]
     public class PlayerManager 

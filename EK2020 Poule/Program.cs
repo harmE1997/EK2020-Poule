@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Wk2018_Poule
+namespace EK2020_Poule
 {
     static class Program
     {

@@ -1,4 +1,4 @@
-﻿namespace Wk2018_Poule
+﻿namespace EK2020_Poule
 {
     partial class MainForm
     {
@@ -37,6 +37,7 @@
             this.gbExistingplayer = new System.Windows.Forms.GroupBox();
             this.btnRemove = new System.Windows.Forms.Button();
             this.btnCheck = new System.Windows.Forms.Button();
+            this.btnStats = new System.Windows.Forms.Button();
             this.gbExistingplayer.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -67,7 +68,7 @@
             this.btnLoadPlayer.Location = new System.Drawing.Point(11, 85);
             this.btnLoadPlayer.Margin = new System.Windows.Forms.Padding(4);
             this.btnLoadPlayer.Name = "btnLoadPlayer";
-            this.btnLoadPlayer.Size = new System.Drawing.Size(132, 53);
+            this.btnLoadPlayer.Size = new System.Drawing.Size(198, 53);
             this.btnLoadPlayer.TabIndex = 2;
             this.btnLoadPlayer.Text = "Laad Speler";
             this.btnLoadPlayer.UseVisualStyleBackColor = true;
@@ -117,7 +118,7 @@
             this.btnRemove.Location = new System.Drawing.Point(11, 146);
             this.btnRemove.Margin = new System.Windows.Forms.Padding(4);
             this.btnRemove.Name = "btnRemove";
-            this.btnRemove.Size = new System.Drawing.Size(132, 53);
+            this.btnRemove.Size = new System.Drawing.Size(199, 53);
             this.btnRemove.TabIndex = 7;
             this.btnRemove.Text = "Verwijder Speler";
             this.btnRemove.UseVisualStyleBackColor = true;
@@ -133,6 +134,17 @@
             this.btnCheck.UseVisualStyleBackColor = true;
             this.btnCheck.Click += new System.EventHandler(this.btnCheck_Click);
             // 
+            // btnStats
+            // 
+            this.btnStats.Location = new System.Drawing.Point(465, 89);
+            this.btnStats.Name = "btnStats";
+            this.btnStats.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnStats.Size = new System.Drawing.Size(204, 32);
+            this.btnStats.TabIndex = 11;
+            this.btnStats.Text = "Stats";
+            this.btnStats.UseVisualStyleBackColor = true;
+            this.btnStats.Click += new System.EventHandler(this.btnStats_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -140,6 +152,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(682, 414);
+            this.Controls.Add(this.btnStats);
             this.Controls.Add(this.btnCheck);
             this.Controls.Add(this.gbExistingplayer);
             this.Controls.Add(this.btnNewPlayer);
@@ -163,6 +176,7 @@
         private System.Windows.Forms.GroupBox gbExistingplayer;
         private System.Windows.Forms.Button btnRemove;
         private System.Windows.Forms.Button btnCheck;
+        private System.Windows.Forms.Button btnStats;
     }
 }
 

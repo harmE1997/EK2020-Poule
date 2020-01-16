@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Wk2018_Poule
+namespace EK2020_Poule
 {
     [Serializable]
     public class Player : IComparable<Player>
@@ -12,12 +12,11 @@ namespace Wk2018_Poule
         public string Name { get; private set; }
         public PoolMatchResult[] Results { get; private set; }
         public KnockOutPhase KnockOut { get; private set; }
-        public string Topscorer { get; private set; }
-        public string DutchEnd { get; private set; }
+        public BonusQuestions Questions { get; private set; }
         public int Score { get; private set; }
         public int Ranking { get; private set; }
 
-        public Player(string name, PoolMatchResult[] poolmatches, KnockOutPhase KO, string topscorer, string dutchend)
+        public Player(string name, PoolMatchResult[] poolmatches, KnockOutPhase KO, BonusQuestions BQ)
         {
             if (name != "Host")
             {
@@ -36,8 +35,7 @@ namespace Wk2018_Poule
             Score = 0;
             Results = poolmatches;
             KnockOut = KO;
-            Topscorer = topscorer;
-            DutchEnd = dutchend;
+            Questions = BQ;
         }
 
         public void setRanking(int rank)
@@ -86,16 +84,8 @@ namespace Wk2018_Poule
                 Score += checkscore;
             }
 
-            if (Topscorer == host.Topscorer)
-            {
-                Score += 200;
-            }
-
-            if (DutchEnd == host.DutchEnd)
-            {
-                Score += 100;
-            }
-            
+            Score += Questions.CheckBonus(host.Questions);
+           
             return true;
         }
 

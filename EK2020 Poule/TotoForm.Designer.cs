@@ -1,4 +1,4 @@
-﻿namespace Wk2018_Poule
+﻿namespace EK2020_Poule
 {
     partial class TotoForm
     {
@@ -1763,7 +1763,7 @@
             // tbChampion
             // 
             this.tbChampion.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
-            this.tbChampion.Location = new System.Drawing.Point(169, 651);
+            this.tbChampion.Location = new System.Drawing.Point(1105, 599);
             this.tbChampion.Margin = new System.Windows.Forms.Padding(4);
             this.tbChampion.Name = "tbChampion";
             this.tbChampion.Size = new System.Drawing.Size(155, 22);
@@ -1774,7 +1774,7 @@
             this.label49.AutoSize = true;
             this.label49.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label49.ForeColor = System.Drawing.Color.White;
-            this.label49.Location = new System.Drawing.Point(25, 655);
+            this.label49.Location = new System.Drawing.Point(904, 598);
             this.label49.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label49.Name = "label49";
             this.label49.Size = new System.Drawing.Size(79, 18);
@@ -1798,10 +1798,8 @@
             this.groupBox1.Controls.Add(this.lblKOInfo);
             this.groupBox1.Controls.Add(this.gbLast16);
             this.groupBox1.Controls.Add(this.gbLast8);
-            this.groupBox1.Controls.Add(this.tbChampion);
             this.groupBox1.Controls.Add(this.gbLast4);
             this.groupBox1.Controls.Add(this.gbFinal);
-            this.groupBox1.Controls.Add(this.label49);
             this.groupBox1.ForeColor = System.Drawing.Color.White;
             this.groupBox1.Location = new System.Drawing.Point(1424, 15);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
@@ -1826,6 +1824,7 @@
             // label59
             // 
             this.label59.AutoSize = true;
+            this.label59.ForeColor = System.Drawing.Color.White;
             this.label59.Location = new System.Drawing.Point(1355, 542);
             this.label59.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label59.Name = "label59";
@@ -1846,6 +1845,7 @@
             // 
             this.label58.AutoSize = true;
             this.label58.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label58.ForeColor = System.Drawing.Color.White;
             this.label58.Location = new System.Drawing.Point(816, 540);
             this.label58.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label58.Name = "label58";
@@ -1921,6 +1921,7 @@
             // 
             this.label37.AutoSize = true;
             this.label37.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label37.ForeColor = System.Drawing.Color.White;
             this.label37.Location = new System.Drawing.Point(816, 570);
             this.label37.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label37.Name = "label37";
@@ -1931,6 +1932,7 @@
             // label38
             // 
             this.label38.AutoSize = true;
+            this.label38.ForeColor = System.Drawing.Color.White;
             this.label38.Location = new System.Drawing.Point(1355, 572);
             this.label38.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label38.Name = "label38";
@@ -1957,8 +1959,10 @@
             this.Controls.Add(this.label37);
             this.Controls.Add(this.label38);
             this.Controls.Add(this.tbDutch);
+            this.Controls.Add(this.tbChampion);
             this.Controls.Add(this.gbFileInput);
             this.Controls.Add(this.label58);
+            this.Controls.Add(this.label49);
             this.Controls.Add(this.label59);
             this.Controls.Add(this.lblName);
             this.Controls.Add(this.tbTopscorer);

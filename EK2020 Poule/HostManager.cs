@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 
-namespace Wk2018_Poule
+namespace EK2020_Poule
 {
     public class HostManager
     {
@@ -44,7 +44,7 @@ namespace Wk2018_Poule
             }
             KnockOutPhase ko = new KnockOutPhase();
 
-            Host = new Player("Host", matches, ko, "", "");
+            Host = new Player("Host", matches, ko, new BonusQuestions("", "", ""));
         }
 
         private void LoadHost()

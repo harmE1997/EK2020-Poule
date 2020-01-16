@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 
-namespace Wk2018_Poule
+namespace EK2020_Poule
 {
     public partial class TotoForm : Form
     {
@@ -45,7 +45,7 @@ namespace Wk2018_Poule
                 }
             }
 
-            Player player = new Player(tbName.Text, matches, KO, tbTopscorer.Text, tbDutch.Text);
+            Player player = new Player(tbName.Text, matches, KO, new BonusQuestions(tbChampion.Text, tbTopscorer.Text, tbDutch.Text));
             if (tbName.Text == "Host")
             {
                 hostmanager.SetHost(player);
@@ -92,7 +92,7 @@ namespace Wk2018_Poule
                 }
             }
 
-            tbTopscorer.Text = player.Topscorer;
+            tbTopscorer.Text = player.Questions.Answers[BonusKeys.Topscorer].Answer;
             tbName.Text = player.Name;
         }
 
@@ -105,7 +105,6 @@ namespace Wk2018_Poule
                 {KOKeys.quarter, new TextBox[]{tb81, tb82, tb83, tb84, tb85, tb86, tb87, tb88, } },
                 {KOKeys.semi, new TextBox[]{tb41, tb42, tb43, tb44 } },
                 {KOKeys.final, new TextBox[]{tbF1, tbF2} },
-                {KOKeys.champ, new TextBox[]{tbChampion } }
             };
 
             NUDs = new NumericUpDown[72] { nudA11, nudA12, nudA21, nudA22, nudA31, nudA32, nudA41, nudA42, nudA51, nudA52, nudA61, nudA62,
@@ -138,7 +137,7 @@ namespace Wk2018_Poule
             string file = tbFile.Text;
             ExcelManager em = new ExcelManager();
             ExcelReadSettings settings = new ExcelReadSettings();
-            Player player = new Player(tbName.Text, em.ReadGroupPhase(file, 1, settings), em.readKnockout(file, 1, settings), em.readTopscorer(file, 1), em.readDutchEnd(file,1));
+            Player player = new Player(tbName.Text, em.ReadGroupPhase(file, 1, settings), em.readKnockout(file, 1, settings), em.readBonus(file, 1));
             manager.removePlayer(tbName.Text);
             manager.AddPlayer(player);
             manager.SavePlayers();

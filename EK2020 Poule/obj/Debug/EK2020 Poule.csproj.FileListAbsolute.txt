@@ -33,11 +33,12 @@ C:\Users\Administrator\Documents\GitHub\EK2020 Poule\EK2020 Poule\bin\Debug\EK20
 C:\Users\Administrator\Documents\GitHub\EK2020 Poule\EK2020 Poule\bin\Debug\EK2020 Poule.exe
 C:\Users\Administrator\Documents\GitHub\EK2020 Poule\EK2020 Poule\bin\Debug\EK2020 Poule.pdb
 C:\Users\Administrator\Documents\GitHub\EK2020 Poule\EK2020 Poule\obj\Debug\EK2020 Poule.csprojAssemblyReference.cache
-C:\Users\Administrator\Documents\GitHub\EK2020 Poule\EK2020 Poule\obj\Debug\Wk2018_Poule.MainForm.resources
-C:\Users\Administrator\Documents\GitHub\EK2020 Poule\EK2020 Poule\obj\Debug\Wk2018_Poule.RankingForm.resources
 C:\Users\Administrator\Documents\GitHub\EK2020 Poule\EK2020 Poule\obj\Debug\EK2020_Poule.Properties.Resources.resources
 C:\Users\Administrator\Documents\GitHub\EK2020 Poule\EK2020 Poule\obj\Debug\EK2020 Poule.csproj.GenerateResource.cache
 C:\Users\Administrator\Documents\GitHub\EK2020 Poule\EK2020 Poule\obj\Debug\EK2020 Poule.csproj.CoreCompileInputs.cache
 C:\Users\Administrator\Documents\GitHub\EK2020 Poule\EK2020 Poule\obj\Debug\EK2020 Poule.exe
 C:\Users\Administrator\Documents\GitHub\EK2020 Poule\EK2020 Poule\obj\Debug\EK2020 Poule.pdb
-C:\Users\Administrator\Documents\GitHub\EK2020 Poule\EK2020 Poule\obj\Debug\Wk2018_Poule.TotoForm.resources
+C:\Users\Administrator\Documents\GitHub\EK2020 Poule\EK2020 Poule\obj\Debug\EK2020_Poule.MainForm.resources
+C:\Users\Administrator\Documents\GitHub\EK2020 Poule\EK2020 Poule\obj\Debug\EK2020_Poule.RankingForm.resources
+C:\Users\Administrator\Documents\GitHub\EK2020 Poule\EK2020 Poule\obj\Debug\EK2020_Poule.StatsForm.resources
+C:\Users\Administrator\Documents\GitHub\EK2020 Poule\EK2020 Poule\obj\Debug\EK2020_Poule.TotoForm.resources

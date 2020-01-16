@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 
-namespace Wk2018_Poule
+namespace EK2020_Poule
 {
     public partial class RankingForm : Form
     {

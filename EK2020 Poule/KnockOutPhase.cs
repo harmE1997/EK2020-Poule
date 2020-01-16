@@ -4,15 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Wk2018_Poule
+namespace EK2020_Poule
 {
     public enum KOKeys
     {
         sixteen,
         quarter,
         semi,
-        final,
-        champ
+        final
     }
 
     [Serializable]
@@ -34,8 +33,7 @@ namespace Wk2018_Poule
                 {KOKeys.sixteen, new Stage() { award = 60, teams = new List<string>() } },
                 {KOKeys.quarter, new Stage() { award = 60, teams = new List<string>()} },
                 {KOKeys.semi, new Stage() { award = 60, teams = new List<string>() } },
-                {KOKeys.final, new Stage() { award = 60, teams = new List<string>() } },
-                {KOKeys.champ, new Stage() { award = 60, teams = new List<string>() } }
+                {KOKeys.final, new Stage() { award = 60, teams = new List<string>() } }
             };
         }
 

@@ -7,7 +7,7 @@ using excel = Microsoft.Office.Interop.Excel;
 using System.Runtime.InteropServices;
 using System.IO;
 
-namespace Wk2018_Poule
+namespace EK2020_Poule
 {
     public class ExcelReadSettings
     {
@@ -119,31 +119,17 @@ namespace Wk2018_Poule
                 settings.KOSize /= 2;
                 phase++;
             }
-            string champ = xlRange.Cells[94, 5].value2;
-            if (champ != null)
-            {
-                ko.Stages.ElementAt(4).Value.teams.Add(champ.ToLower());
-            }
             Clean();
             return ko;
         }
 
-        public string readTopscorer(string filename, int sheet)
+        public BonusQuestions readBonus(string filename, int sheet)
         {
             Initialise(filename, sheet);
-            string topscorer = xlRange.Cells[95, 5].value2;
+            BonusQuestions b = new BonusQuestions(xlRange.Cells[94, 5].value2, xlRange.Cells[95, 5].value2, xlRange.Cells[96, 5].value2);
             Clean();
-            return topscorer.ToLower();            
+            return b;            
         }
-
-        public string readDutchEnd(string filename, int sheet)
-        {
-            Initialise(filename, sheet);
-            string topscorer = xlRange.Cells[96, 5].value2;
-            Clean();
-            return topscorer.ToLower();
-        }
-
         public void Clean()
         {
             //cleanup

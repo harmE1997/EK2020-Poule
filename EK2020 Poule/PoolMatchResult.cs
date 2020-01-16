@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Wk2018_Poule
+namespace EK2020_Poule
 {
     [Serializable]
     public class PoolMatchResult

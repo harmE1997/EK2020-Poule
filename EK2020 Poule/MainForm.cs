@@ -11,12 +11,13 @@ using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Runtime.Serialization;
 
-namespace Wk2018_Poule
+namespace EK2020_Poule
 {
     public partial class MainForm : Form
     {
         private PlayerManager manager;
         private HostManager host;
+        private TotoForm toto;
         public MainForm()
         {
             InitializeComponent();
@@ -27,9 +28,8 @@ namespace Wk2018_Poule
 
         private void btnNewPlayer_Click(object sender, EventArgs e)
         {
-            TotoForm toto = new TotoForm();
-            toto.Show();
             toto.manager = manager;
+            toto.Show();
         }
 
         private void btnRanking_Click(object sender, EventArgs e)
@@ -43,17 +43,16 @@ namespace Wk2018_Poule
             string name = tbPlayerName.Text;
             manager.LoadPlayers();
             Player player;
-            TotoForm totoform = new TotoForm();
             if (name == "Host")
             {
                 player = host.GetHost();
-                totoform.hostmanager = host;
+                toto.hostmanager = host;
             }
 
             else
             {
                 player = manager.FindPlayerByName(name);
-                totoform.manager = manager;
+                toto.manager = manager;
                 if (player == null)
                 {
                     MessageBox.Show("Deze speler bestaat niet. Gebruik een andere naam");
@@ -61,8 +60,8 @@ namespace Wk2018_Poule
                 }
             }           
             
-            totoform.loadPlayer(player);           
-            totoform.Show();
+            toto.loadPlayer(player);           
+            toto.Show();
         }
 
         private void btnRemove_Click(object sender, EventArgs e)
@@ -91,6 +90,12 @@ namespace Wk2018_Poule
         private void btnCheck_Click(object sender, EventArgs e)
         {
             manager.checkAllPlayers(host.GetHost());
+        }
+
+        private void btnStats_Click(object sender, EventArgs e)
+        {
+            StatsForm stats = new StatsForm();
+            stats.Show();
         }
     }
 }
