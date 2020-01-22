@@ -10,13 +10,14 @@ namespace EK2020_Poule
     public class Player : IComparable<Player>
     {
         public string Name { get; private set; }
+        public string Town { get; private set; }
         public PoolMatchResult[] Results { get; private set; }
         public KnockOutPhase KnockOut { get; private set; }
         public BonusQuestions Questions { get; private set; }
         public int Score { get; private set; }
         public int Ranking { get; private set; }
 
-        public Player(string name, PoolMatchResult[] poolmatches, KnockOutPhase KO, BonusQuestions BQ)
+        public Player(string name, string town, PoolMatchResult[] poolmatches, KnockOutPhase KO, BonusQuestions BQ)
         {
             if (name != "Host")
             {

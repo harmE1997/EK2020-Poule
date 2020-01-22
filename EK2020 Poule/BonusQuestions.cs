@@ -18,8 +18,6 @@ namespace EK2020_Poule
     {
         public string Answer;
         public int Points;
-        public bool IsArray;
-        public int WeekAnswered;
     }
 
     [Serializable]
@@ -32,8 +30,8 @@ namespace EK2020_Poule
             Answers = new Dictionary<BonusKeys, Question>()
             {
                 {BonusKeys.Kampioen, new Question(){Answer = kampioen, Points = 100 } },
-                {BonusKeys.NL, new Question(){Answer = NL, Points = 40} },
-                {BonusKeys.Topscorer, new Question(){Answer = topscorer, Points = 80, } },
+                {BonusKeys.NL, new Question(){Answer = NL, Points = 100} },
+                {BonusKeys.Topscorer, new Question(){Answer = topscorer, Points = 200, } },
             };
         }
 

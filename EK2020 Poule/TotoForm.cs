@@ -45,7 +45,7 @@ namespace EK2020_Poule
                 }
             }
 
-            Player player = new Player(tbName.Text, matches, KO, new BonusQuestions(tbChampion.Text, tbTopscorer.Text, tbDutch.Text));
+            Player player = new Player(tbName.Text, tbTown.Text, matches, KO, new BonusQuestions(tbChampion.Text, tbTopscorer.Text, tbDutch.Text));
             if (tbName.Text == "Host")
             {
                 hostmanager.SetHost(player);
@@ -72,16 +72,15 @@ namespace EK2020_Poule
 
         public void loadPlayer(Player player)
         {
-            int x = 0;
-            while (x < NUDs.Length)
+            //load group phase
+            for (int x = 0;  x < NUDs.Length; x+=2)
             {
                 int y = x / 2;
                 NUDs[x].Value = player.Results[y].ScoreA;
                 NUDs[x + 1].Value = player.Results[y].ScoreB;
-                x += 2;
             }
 
-            
+            //load knock-out phase
             foreach (var stage in player.KnockOut.Stages)
             {
                 int i = 0;
@@ -91,9 +90,13 @@ namespace EK2020_Poule
                     i++;
                 }
             }
-
+            
+            //load bonus questions and other info
+            tbChampion.Text = player.Questions.Answers[BonusKeys.Kampioen].Answer;
             tbTopscorer.Text = player.Questions.Answers[BonusKeys.Topscorer].Answer;
+            tbDutch.Text = player.Questions.Answers[BonusKeys.NL].Answer;
             tbName.Text = player.Name;
+            tbTown.Text = player.Town;
         }
 
         private void fillArrays()
@@ -107,7 +110,8 @@ namespace EK2020_Poule
                 {KOKeys.final, new TextBox[]{tbF1, tbF2} },
             };
 
-            NUDs = new NumericUpDown[72] { nudA11, nudA12, nudA21, nudA22, nudA31, nudA32, nudA41, nudA42, nudA51, nudA52, nudA61, nudA62,
+            NUDs = new NumericUpDown[72] {
+            nudA11, nudA12, nudA21, nudA22, nudA31, nudA32, nudA41, nudA42, nudA51, nudA52, nudA61, nudA62,
             nudB11, nudB12, nudB21, nudB22, nudB31, nudB32, nudB41, nudB42, nudB51, nudB52, nudB61,nudB62,
             nudC11, nudC12, nudC21, nudC22, nudC31, nudC32, nudC41, nudC42, nudC51, nudC52, nudC61, nudC62,
             nudD11, nudD12, nudD21, nudD22, nudD31, nudD32, nudD41, nudD42, nudD51, nudD52, nudD61, nudD62,
@@ -137,7 +141,7 @@ namespace EK2020_Poule
             string file = tbFile.Text;
             ExcelManager em = new ExcelManager();
             ExcelReadSettings settings = new ExcelReadSettings();
-            Player player = new Player(tbName.Text, em.ReadGroupPhase(file, 1, settings), em.readKnockout(file, 1, settings), em.readBonus(file, 1));
+            Player player = new Player(tbName.Text, tbTown.Text, em.ReadGroupPhase(file, 1, settings), em.readKnockout(file, 1, settings), em.readBonus(file, 1));
             manager.removePlayer(tbName.Text);
             manager.AddPlayer(player);
             manager.SavePlayers();

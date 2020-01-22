@@ -194,6 +194,8 @@
             this.label37 = new System.Windows.Forms.Label();
             this.label38 = new System.Windows.Forms.Label();
             this.tbDutch = new System.Windows.Forms.TextBox();
+            this.lblTown = new System.Windows.Forms.Label();
+            this.tbTown = new System.Windows.Forms.TextBox();
             this.gbA.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudA62)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudA61)).BeginInit();
@@ -1876,7 +1878,7 @@
             this.gbFileInput.Controls.Add(this.tbFile);
             this.gbFileInput.Controls.Add(this.btnFile);
             this.gbFileInput.ForeColor = System.Drawing.Color.White;
-            this.gbFileInput.Location = new System.Drawing.Point(23, 74);
+            this.gbFileInput.Location = new System.Drawing.Point(23, 113);
             this.gbFileInput.Name = "gbFileInput";
             this.gbFileInput.Size = new System.Drawing.Size(309, 347);
             this.gbFileInput.TabIndex = 43;
@@ -1949,6 +1951,23 @@
             this.tbDutch.Size = new System.Drawing.Size(242, 22);
             this.tbDutch.TabIndex = 45;
             // 
+            // lblTown
+            // 
+            this.lblTown.AutoSize = true;
+            this.lblTown.ForeColor = System.Drawing.Color.White;
+            this.lblTown.Location = new System.Drawing.Point(34, 69);
+            this.lblTown.Name = "lblTown";
+            this.lblTown.Size = new System.Drawing.Size(46, 17);
+            this.lblTown.TabIndex = 47;
+            this.lblTown.Text = "Town:";
+            // 
+            // tbTown
+            // 
+            this.tbTown.Location = new System.Drawing.Point(112, 64);
+            this.tbTown.Name = "tbTown";
+            this.tbTown.Size = new System.Drawing.Size(176, 22);
+            this.tbTown.TabIndex = 48;
+            // 
             // TotoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1956,6 +1975,8 @@
             this.BackColor = System.Drawing.Color.LightSeaGreen;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1788, 726);
+            this.Controls.Add(this.tbTown);
+            this.Controls.Add(this.lblTown);
             this.Controls.Add(this.label37);
             this.Controls.Add(this.label38);
             this.Controls.Add(this.tbDutch);
@@ -2247,5 +2268,7 @@
         private System.Windows.Forms.Label label37;
         private System.Windows.Forms.Label label38;
         private System.Windows.Forms.TextBox tbDutch;
+        private System.Windows.Forms.Label lblTown;
+        private System.Windows.Forms.TextBox tbTown;
     }
 }
