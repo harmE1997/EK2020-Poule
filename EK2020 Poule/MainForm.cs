@@ -24,6 +24,7 @@ namespace EK2020_Poule
             manager = new PlayerManager();
             manager.LoadPlayers();
             host = new HostManager();
+            toto = new TotoForm();
         }
 
         private void btnNewPlayer_Click(object sender, EventArgs e)

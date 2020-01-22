@@ -44,7 +44,7 @@ namespace EK2020_Poule
             }
             KnockOutPhase ko = new KnockOutPhase();
 
-            Host = new Player("Host", matches, ko, new BonusQuestions("", "", ""));
+            Host = new Player("Host","Zaltbommel", matches, ko, new BonusQuestions("", "", ""));
         }
 
         private void LoadHost()
