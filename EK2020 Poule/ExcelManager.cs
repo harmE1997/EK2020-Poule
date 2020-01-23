@@ -126,7 +126,7 @@ namespace EK2020_Poule
         public BonusQuestions readBonus(string filename, int sheet)
         {
             Initialise(filename, sheet);
-            BonusQuestions b = new BonusQuestions(xlRange.Cells[94, 5].value2, xlRange.Cells[95, 5].value2, xlRange.Cells[96, 5].value2);
+            BonusQuestions b = new BonusQuestions(xlRange.Cells[94, 5].value2.ToLower(), xlRange.Cells[95, 5].value2.ToLower(), xlRange.Cells[96, 5].value2.ToLower());
             Clean();
             return b;            
         }
