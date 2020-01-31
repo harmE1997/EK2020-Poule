@@ -14,7 +14,7 @@ namespace EK2020_Poule
     public partial class TotoForm : Form
     {
         private Dictionary<KOKeys, TextBox[]> kolocs;
-        private NumericUpDown[] NUDs = new NumericUpDown[96];
+        private NumericUpDown[] NUDs = new NumericUpDown[72];
         public PlayerManager manager;
         public HostManager hostmanager;
         public TotoForm()
@@ -30,7 +30,7 @@ namespace EK2020_Poule
             PoolMatchResult[] matches = new PoolMatchResult[48];
             KnockOutPhase KO = new KnockOutPhase();
             int x = 0;
-            while (x < 96)
+            while (x < 72)
             {
                 int y = x / 2;
                 matches[y] = new PoolMatchResult(Convert.ToInt32(NUDs[x].Value), Convert.ToInt32(NUDs[x + 1].Value));
@@ -104,7 +104,7 @@ namespace EK2020_Poule
             kolocs = new Dictionary<KOKeys, TextBox[]>()
             {
                 {KOKeys.sixteen, new TextBox[]{
-                    tb161, tb162, tb163, tb164, tb165, tb166, tb167, tb168, tb169, tb1610, tb1611, tb1612, tb1613, tb1613, tb1614, tb1615, tb1616 } },
+                    tb161, tb162, tb163, tb164, tb165, tb166, tb167, tb168, tb169, tb1610, tb1611, tb1612, tb1613, tb1614, tb1615, tb1616 } },
                 {KOKeys.quarter, new TextBox[]{tb81, tb82, tb83, tb84, tb85, tb86, tb87, tb88, } },
                 {KOKeys.semi, new TextBox[]{tb41, tb42, tb43, tb44 } },
                 {KOKeys.final, new TextBox[]{tbF1, tbF2} },
@@ -142,11 +142,8 @@ namespace EK2020_Poule
             ExcelManager em = new ExcelManager();
             ExcelReadSettings settings = new ExcelReadSettings();
             Player player = new Player(tbName.Text, tbTown.Text, em.ReadGroupPhase(file, 1, settings), em.readKnockout(file, 1, settings), em.readBonus(file, 1));
-            manager.removePlayer(tbName.Text);
-            manager.AddPlayer(player);
-            manager.SavePlayers();
-            Hide();
-            Dispose();
+            MessageBox.Show("player sucesfully created!");
+            loadPlayer(player);
         }
     }
 }

@@ -29,6 +29,7 @@ namespace EK2020_Poule
 
         private void btnNewPlayer_Click(object sender, EventArgs e)
         {
+            toto = new TotoForm();
             toto.manager = manager;
             toto.Show();
         }
@@ -44,6 +45,7 @@ namespace EK2020_Poule
             string name = tbPlayerName.Text;
             manager.LoadPlayers();
             Player player;
+            toto = new TotoForm();
             if (name == "Host")
             {
                 player = host.GetHost();
@@ -96,6 +98,7 @@ namespace EK2020_Poule
         private void btnStats_Click(object sender, EventArgs e)
         {
             StatsForm stats = new StatsForm();
+            stats.manager = manager;
             stats.Show();
         }
     }

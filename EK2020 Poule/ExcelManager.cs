@@ -9,6 +9,14 @@ using System.IO;
 
 namespace EK2020_Poule
 {
+    public class Phase
+    {
+        public int column;
+        public int startrow;
+        public int gapsize;
+        public int size;
+    }
+
     public class ExcelReadSettings
     {
         //Group Phase
@@ -20,16 +28,19 @@ namespace EK2020_Poule
         public int GroupOutColumn = 9;
 
         //KO Phase
-        public int KOColumn = 10;
-        public int KOStart = 66;
-        public int KOSize = 8;
-        public int Phases = 4;
-
+        public Phase[] phases;
         public int Miss = 0;
 
         public ExcelReadSettings(int miss = 0)
         {
             GroupStartRow += miss;
+            phases = new Phase[4]
+            {
+                new Phase() { column = 4, startrow = 68, gapsize = 2, size = 16 },
+                new Phase() { column = 6, startrow = 69, gapsize = 4, size = 8 },
+                new Phase() { column = 8, startrow = 71, gapsize = 8, size = 4 },
+                new Phase() { column = 11, startrow = 74, gapsize = 16, size = 2 }
+            };
         }
     }
 
@@ -98,26 +109,19 @@ namespace EK2020_Poule
         {
             Initialise(filename, sheet);
             KnockOutPhase ko = new KnockOutPhase();
-            int phase = 0;
-            while (phase < settings.Phases)
+            int p = 0;
+            foreach (var phase in settings.phases)
             {
-                int line = 0;
-                while (line < settings.KOSize)
+                for (int i = 0; i < phase.size; i++)
                 {
-                    for (int i = 0; i < 2; i++)
+                    int row = phase.startrow + (phase.gapsize * i);
+                    string team = xlRange.Cells[row, phase.column].value2;
+                    if (team != null)
                     {
-                        int row = line + settings.KOStart;
-                        string team = xlRange.Cells[row, settings.KOColumn + i].value2;
-                        if (team != null)
-                        {
-                            ko.Stages.ElementAt(phase).Value.teams.Add(team.ToLower());
-                        }
+                        ko.Stages.ElementAt(p).Value.teams.Add(team.ToLower());
                     }
-                    line++;
                 }
-                settings.KOStart += settings.KOSize + 3;
-                settings.KOSize /= 2;
-                phase++;
+                p++;
             }
             Clean();
             return ko;
@@ -126,9 +130,9 @@ namespace EK2020_Poule
         public BonusQuestions readBonus(string filename, int sheet)
         {
             Initialise(filename, sheet);
-            BonusQuestions b = new BonusQuestions(xlRange.Cells[94, 5].value2.ToLower(), xlRange.Cells[95, 5].value2.ToLower(), xlRange.Cells[96, 5].value2.ToLower());
+            BonusQuestions b = new BonusQuestions(xlRange.Cells[102, 5].value2.ToLower(), xlRange.Cells[103, 5].value2.ToLower(), xlRange.Cells[104, 5].value2.ToLower());
             Clean();
-            return b;            
+            return b;
         }
         public void Clean()
         {
