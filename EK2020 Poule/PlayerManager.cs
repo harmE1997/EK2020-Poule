@@ -9,6 +9,12 @@ using System.Runtime.Serialization;
 
 namespace EK2020_Poule
 {
+    public class goalScorer
+    {
+        public string name;
+        public int goals;
+    }
+
     [Serializable]
     public class PlayerManager 
     {
@@ -97,11 +103,13 @@ namespace EK2020_Poule
         {
             if (host != null)
             {
+                ExcelManager em = new ExcelManager();
+                var s = em.readGoalScorers("C:\\Users\\Administrator\\Documents\\EK2020 Poule Docs\\EK Poule Admin.xlsx", 6);
                 foreach (Player player in Players)
                 {
                     if (player.Name != "Host")
                     {
-                        player.Check(host);
+                        player.Check(host, s);
                     }
                 }
                 SavePlayers();

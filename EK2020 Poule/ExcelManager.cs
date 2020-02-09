@@ -134,6 +134,30 @@ namespace EK2020_Poule
             Clean();
             return b;
         }
+
+        public List<goalScorer> readGoalScorers(string filename, int sheet)
+        {
+            List<goalScorer> scorers = new List<goalScorer>();
+            Initialise(filename, sheet);
+            int i = 2;
+            while (true)
+            {
+                if (xlRange.Cells[i,1].value2 == null)
+                {
+                    break;
+                }
+                goalScorer s = new goalScorer()
+                {
+                    name = xlRange.Cells[i,1].value2.ToLower(),
+                    goals = Convert.ToInt32(xlRange.Cells[i, 2].value2)
+                };
+                scorers.Add(s);
+                i++;
+            }
+            Clean();
+            return scorers;
+        }
+
         public void Clean()
         {
             //cleanup

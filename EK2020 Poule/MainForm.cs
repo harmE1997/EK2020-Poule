@@ -93,6 +93,7 @@ namespace EK2020_Poule
         private void btnCheck_Click(object sender, EventArgs e)
         {
             manager.checkAllPlayers(host.GetHost());
+            MessageBox.Show("Done Checking");
         }
 
         private void btnStats_Click(object sender, EventArgs e)

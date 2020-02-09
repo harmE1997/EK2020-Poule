@@ -43,7 +43,7 @@ namespace EK2020_Poule
         {
             Ranking = rank;
         }
-        public bool Check(Player host)
+        public bool Check(Player host, List<goalScorer> scorers)
         {
             if (host == null)
             {
@@ -86,7 +86,11 @@ namespace EK2020_Poule
             }
 
             Score += Questions.CheckBonus(host.Questions);
-           
+            var s = findGoalscorer(scorers, Questions.Answers[BonusKeys.Topscorer].Answer);
+            if (s != null)
+            {
+                Score += (s.goals * 40);
+            }
             return true;
         }
 
@@ -106,6 +110,18 @@ namespace EK2020_Poule
         public string playerToString()
         {
             return Ranking + ".\t" + Name + "\t" + Score;
+        }
+
+        private goalScorer findGoalscorer(List<goalScorer> scorers, string name)
+        {
+            foreach (var s in scorers)
+            {
+                if (s.name == name)
+                {
+                    return s;
+                }
+            }
+            return null;
         }
     }
 }
