@@ -38,11 +38,16 @@ namespace EK2020_Poule
             KnockOut = KO;
             Questions = BQ;
         }
+        public string GetMatch(int matchID)
+        {
+            return Results[matchID].Winner;
+        }
 
         public void setRanking(int rank)
         {
             Ranking = rank;
         }
+
         public bool Check(Player host, List<goalScorer> scorers)
         {
             if (host == null)
@@ -94,6 +99,31 @@ namespace EK2020_Poule
             return true;
         }
 
+        public int CheckMatch(Player Host, int matchID)
+        {
+            PoolMatchResult HostMatch = Host.Results[matchID];
+            PoolMatchResult ThisMatch = Results[matchID];
+
+            if (HostMatch.ScoreA != 99 && ThisMatch.ScoreA != 99)
+            {
+                if (HostMatch.ScoreA == ThisMatch.ScoreA && ThisMatch.ScoreB == HostMatch.ScoreB)
+                {
+                    return 2;
+                }
+
+                else if (ThisMatch.Winner == HostMatch.Winner)
+                {
+                    return 1;
+                }
+
+                else
+                {
+                    return 0;
+                }
+            }
+
+            return -1;
+        }
         public int CompareTo(Player other)
         {
             if (other != null)

@@ -21,11 +21,29 @@ namespace EK2020_Poule
         }
 
         private void btnChampions_Click(object sender, EventArgs e) => ActionStat(BonusKeys.Kampioen);
-
         private void btnTopscorers_Click(object sender, EventArgs e) => ActionStat(BonusKeys.Topscorer);
-
         private void btnNL_Click(object sender, EventArgs e) => ActionStat(BonusKeys.NL);
- 
+        private void btnLast16_Click(object sender, EventArgs e) => ActionKnockout(KOKeys.sixteen);
+        private void btnQuarter_Click(object sender, EventArgs e) => ActionKnockout(KOKeys.quarter);
+        private void btnSemi_Click(object sender, EventArgs e) => ActionKnockout(KOKeys.semi);
+        private void btnFinal_Click(object sender, EventArgs e) => ActionKnockout(KOKeys.final);
+
+
+        private void ActionKnockout(KOKeys Key)
+        {
+            stats.Clear();
+            foreach (Player player in manager.Players)
+            {
+                var Name = player.Name;
+                var answer = player.KnockOut.Stages[Key].teams;
+                foreach (var team in answer)
+                {
+                    UpdateStats(team, Name);
+                }
+            }
+            UpdateListBox();
+        }
+
         private void ActionStat(BonusKeys Key)
         {
             stats.Clear();
@@ -77,5 +95,6 @@ namespace EK2020_Poule
                 lbStats.Items.Add("=================================================================================================");
             }
         }
+
     }
 }

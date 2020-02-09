@@ -38,7 +38,16 @@
             this.btnRemove = new System.Windows.Forms.Button();
             this.btnCheck = new System.Windows.Forms.Button();
             this.btnStats = new System.Windows.Forms.Button();
+            this.gbMatches = new System.Windows.Forms.GroupBox();
+            this.btnMatch = new System.Windows.Forms.Button();
+            this.btnInfo = new System.Windows.Forms.Button();
+            this.lblID = new System.Windows.Forms.Label();
+            this.lblPoule = new System.Windows.Forms.Label();
+            this.cbID = new System.Windows.Forms.ComboBox();
+            this.cbPoules = new System.Windows.Forms.ComboBox();
+            this.rtbNotes = new System.Windows.Forms.RichTextBox();
             this.gbExistingplayer.SuspendLayout();
+            this.gbMatches.SuspendLayout();
             this.SuspendLayout();
             // 
             // tbPlayerName
@@ -145,13 +154,112 @@
             this.btnStats.UseVisualStyleBackColor = true;
             this.btnStats.Click += new System.EventHandler(this.btnStats_Click);
             // 
+            // gbMatches
+            // 
+            this.gbMatches.BackColor = System.Drawing.Color.Transparent;
+            this.gbMatches.Controls.Add(this.btnMatch);
+            this.gbMatches.Controls.Add(this.btnInfo);
+            this.gbMatches.Controls.Add(this.lblID);
+            this.gbMatches.Controls.Add(this.lblPoule);
+            this.gbMatches.Controls.Add(this.cbID);
+            this.gbMatches.Controls.Add(this.cbPoules);
+            this.gbMatches.ForeColor = System.Drawing.Color.White;
+            this.gbMatches.Location = new System.Drawing.Point(486, 148);
+            this.gbMatches.Name = "gbMatches";
+            this.gbMatches.Size = new System.Drawing.Size(200, 152);
+            this.gbMatches.TabIndex = 12;
+            this.gbMatches.TabStop = false;
+            this.gbMatches.Text = "Matches";
+            // 
+            // btnMatch
+            // 
+            this.btnMatch.ForeColor = System.Drawing.Color.Black;
+            this.btnMatch.Location = new System.Drawing.Point(6, 115);
+            this.btnMatch.Name = "btnMatch";
+            this.btnMatch.Size = new System.Drawing.Size(188, 29);
+            this.btnMatch.TabIndex = 5;
+            this.btnMatch.Text = "Get match";
+            this.btnMatch.UseVisualStyleBackColor = true;
+            this.btnMatch.Click += new System.EventHandler(this.btnMatch_Click);
+            // 
+            // btnInfo
+            // 
+            this.btnInfo.ForeColor = System.Drawing.Color.Black;
+            this.btnInfo.Location = new System.Drawing.Point(6, 81);
+            this.btnInfo.Name = "btnInfo";
+            this.btnInfo.Size = new System.Drawing.Size(188, 27);
+            this.btnInfo.TabIndex = 4;
+            this.btnInfo.Text = "Get Info";
+            this.btnInfo.UseVisualStyleBackColor = true;
+            this.btnInfo.Click += new System.EventHandler(this.btnInfo_Click);
+            // 
+            // lblID
+            // 
+            this.lblID.AutoSize = true;
+            this.lblID.Location = new System.Drawing.Point(22, 54);
+            this.lblID.Name = "lblID";
+            this.lblID.Size = new System.Drawing.Size(21, 17);
+            this.lblID.TabIndex = 3;
+            this.lblID.Text = "ID";
+            // 
+            // lblPoule
+            // 
+            this.lblPoule.AutoSize = true;
+            this.lblPoule.Location = new System.Drawing.Point(13, 24);
+            this.lblPoule.Name = "lblPoule";
+            this.lblPoule.Size = new System.Drawing.Size(44, 17);
+            this.lblPoule.TabIndex = 2;
+            this.lblPoule.Text = "Poule";
+            // 
+            // cbID
+            // 
+            this.cbID.FormattingEnabled = true;
+            this.cbID.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6"});
+            this.cbID.Location = new System.Drawing.Point(63, 51);
+            this.cbID.Name = "cbID";
+            this.cbID.Size = new System.Drawing.Size(131, 24);
+            this.cbID.TabIndex = 1;
+            this.cbID.Text = "1";
+            // 
+            // cbPoules
+            // 
+            this.cbPoules.FormattingEnabled = true;
+            this.cbPoules.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6"});
+            this.cbPoules.Location = new System.Drawing.Point(63, 21);
+            this.cbPoules.Name = "cbPoules";
+            this.cbPoules.Size = new System.Drawing.Size(131, 24);
+            this.cbPoules.TabIndex = 0;
+            this.cbPoules.Text = "1";
+            // 
+            // rtbNotes
+            // 
+            this.rtbNotes.Location = new System.Drawing.Point(486, 306);
+            this.rtbNotes.Name = "rtbNotes";
+            this.rtbNotes.Size = new System.Drawing.Size(207, 105);
+            this.rtbNotes.TabIndex = 13;
+            this.rtbNotes.Text = "";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(682, 414);
+            this.ClientSize = new System.Drawing.Size(705, 423);
+            this.Controls.Add(this.rtbNotes);
+            this.Controls.Add(this.gbMatches);
             this.Controls.Add(this.btnStats);
             this.Controls.Add(this.btnCheck);
             this.Controls.Add(this.gbExistingplayer);
@@ -162,6 +270,8 @@
             this.Text = "EK 2020 Poule";
             this.gbExistingplayer.ResumeLayout(false);
             this.gbExistingplayer.PerformLayout();
+            this.gbMatches.ResumeLayout(false);
+            this.gbMatches.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -177,6 +287,14 @@
         private System.Windows.Forms.Button btnRemove;
         private System.Windows.Forms.Button btnCheck;
         private System.Windows.Forms.Button btnStats;
+        private System.Windows.Forms.GroupBox gbMatches;
+        private System.Windows.Forms.Button btnMatch;
+        private System.Windows.Forms.Button btnInfo;
+        private System.Windows.Forms.Label lblID;
+        private System.Windows.Forms.Label lblPoule;
+        private System.Windows.Forms.ComboBox cbID;
+        private System.Windows.Forms.ComboBox cbPoules;
+        private System.Windows.Forms.RichTextBox rtbNotes;
     }
 }
 

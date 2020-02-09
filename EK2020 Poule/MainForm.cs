@@ -61,9 +61,9 @@ namespace EK2020_Poule
                     MessageBox.Show("Deze speler bestaat niet. Gebruik een andere naam");
                     return;
                 }
-            }           
-            
-            toto.loadPlayer(player);           
+            }
+
+            toto.loadPlayer(player);
             toto.Show();
         }
 
@@ -101,6 +101,60 @@ namespace EK2020_Poule
             StatsForm stats = new StatsForm();
             stats.manager = manager;
             stats.Show();
+        }
+
+        private void btnInfo_Click(object sender, EventArgs e)
+        {
+            int As = 0;
+            int Bs = 0;
+            int Ds = 0;
+            int matchID = (Convert.ToInt32(cbPoules.Text) - 1) * 6 + Convert.ToInt32(cbID.Text);
+
+            foreach (Player p in manager.Players)
+            {
+                string res = p.GetMatch(matchID);
+                switch (res)
+                {
+                    case "A":
+                        As++;
+                        break;
+                    case "B":
+                        Bs++;
+                        break;
+                    case "D":
+                        Ds++;
+                        break;
+                    default:
+                        break;
+                }
+            }
+
+            rtbNotes.Text = "Winst A: " + As + "\nWinst B: " + Bs + "\nGelijkspel: " + Ds;
+        }
+
+        private void btnMatch_Click(object sender, EventArgs e)
+        {
+            int fulls = 0;
+            int halfs = 0;
+            int matchID = (Convert.ToInt32(cbPoules.Text) - 1) * 6 + Convert.ToInt32(cbID.Text);
+            string Names = "";
+            foreach (Player player in manager.Players)
+            {
+                int check = player.CheckMatch(host.GetHost(), matchID);
+                if (check > 0)
+                {
+                    halfs++;
+                }
+
+                if (check == 2)
+                {
+                    fulls++;
+                    Names += player.Name + ", ";
+                }
+
+            }
+
+            rtbNotes.Text = "Goede winnaar: " + halfs + "\nHelemaal correct: " + fulls + " " + Names;
         }
     }
 }
