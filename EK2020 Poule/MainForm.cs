@@ -46,6 +46,7 @@ namespace EK2020_Poule
             manager.LoadPlayers();
             Player player;
             toto = new TotoForm();
+            toto.manager = manager;
             if (name == "Host")
             {
                 player = host.GetHost();
@@ -55,7 +56,6 @@ namespace EK2020_Poule
             else
             {
                 player = manager.FindPlayerByName(name);
-                toto.manager = manager;
                 if (player == null)
                 {
                     MessageBox.Show("Deze speler bestaat niet. Gebruik een andere naam");
@@ -108,7 +108,7 @@ namespace EK2020_Poule
             int As = 0;
             int Bs = 0;
             int Ds = 0;
-            int matchID = (Convert.ToInt32(cbPoules.Text) - 1) * 6 + Convert.ToInt32(cbID.Text);
+            int matchID = (Convert.ToInt32(cbPoules.Text) - 1) * 6 + Convert.ToInt32(cbID.Text) -1;
 
             foreach (Player p in manager.Players)
             {
@@ -136,7 +136,7 @@ namespace EK2020_Poule
         {
             int fulls = 0;
             int halfs = 0;
-            int matchID = (Convert.ToInt32(cbPoules.Text) - 1) * 6 + Convert.ToInt32(cbID.Text);
+            int matchID = (Convert.ToInt32(cbPoules.Text) - 1) * 6 + Convert.ToInt32(cbID.Text) -1;
             string Names = "";
             foreach (Player player in manager.Players)
             {
