@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
+using System.Configuration;
 
 namespace EK2020_Poule
 {
@@ -49,9 +50,10 @@ namespace EK2020_Poule
 
         private void LoadHost()
         {
-            if (File.Exists("Host"))
+            string file = ConfigurationManager.AppSettings.Get("HostFileName");
+            if (File.Exists(file))
             {
-                FileStream stream = new FileStream("Host", FileMode.Open);
+                FileStream stream = new FileStream(file, FileMode.Open);
                 BinaryFormatter Formatter = new BinaryFormatter();
                 Host = (Player)Formatter.Deserialize(stream);
                 stream.Close();
@@ -66,7 +68,8 @@ namespace EK2020_Poule
 
         private void saveHost()
         {
-            FileStream stream = new FileStream("Host", FileMode.Create);
+            string file = ConfigurationManager.AppSettings.Get("HostFileName");
+            FileStream stream = new FileStream(file, FileMode.Create);
             BinaryFormatter Formatter = new BinaryFormatter();
             Formatter.Serialize(stream, Host);
             stream.Close();

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using System.Configuration;
 
 namespace EK2020_Poule
 {
@@ -38,7 +39,7 @@ namespace EK2020_Poule
             manager.rankPlayers();
             foreach (Player player in manager.Players)
             {
-                    lbRanking.Items.Add(player.playerToString());          
+                lbRanking.Items.Add(player.playerToString());
             }
         }
 
@@ -46,14 +47,12 @@ namespace EK2020_Poule
         {
             proBarRanking.Maximum = manager.Players.Count();
             proBarRanking.Value = 0;
-            if (ofdRanking.ShowDialog() == DialogResult.OK)
+            ExcelManager m = new ExcelManager();
+            foreach (int i in m.ExportPlayersToExcel(ConfigurationManager.AppSettings.Get("AdminLocation"),Convert.ToInt32(ConfigurationManager.AppSettings.Get("RankingSheet")), manager.Players))
             {
-                ExcelManager m = new ExcelManager();
-                foreach (int i in m.ExportPlayersToExcel(ofdRanking.FileName, 2, manager.Players))
-                {
-                    proBarRanking.Value = i;
-                }
+                proBarRanking.Value = i;
             }
+
         }
     }
 }

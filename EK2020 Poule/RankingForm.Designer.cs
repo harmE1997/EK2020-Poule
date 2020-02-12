@@ -30,7 +30,6 @@
         {
             this.lbRanking = new System.Windows.Forms.ListBox();
             this.btnRanking = new System.Windows.Forms.Button();
-            this.ofdRanking = new System.Windows.Forms.OpenFileDialog();
             this.proBarRanking = new System.Windows.Forms.ProgressBar();
             this.SuspendLayout();
             // 
@@ -56,10 +55,6 @@
             this.btnRanking.Text = "Export Ranking to Excel";
             this.btnRanking.UseVisualStyleBackColor = true;
             this.btnRanking.Click += new System.EventHandler(this.btnRanking_Click);
-            // 
-            // ofdRanking
-            // 
-            this.ofdRanking.FileName = "ofdRanking";
             // 
             // proBarRanking
             // 
@@ -89,7 +84,6 @@
 
         private System.Windows.Forms.ListBox lbRanking;
         private System.Windows.Forms.Button btnRanking;
-        private System.Windows.Forms.OpenFileDialog ofdRanking;
         private System.Windows.Forms.ProgressBar proBarRanking;
     }
 }

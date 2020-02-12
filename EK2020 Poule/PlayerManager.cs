@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Runtime.Serialization;
+using System.Configuration;
 
 namespace EK2020_Poule
 {
@@ -23,7 +24,7 @@ namespace EK2020_Poule
         public PlayerManager()
         {
             Players = new List<Player>();
-            FileName = "EK2020";
+            FileName = ConfigurationManager.AppSettings.Get("PlayersFileName");
         }
 
         public void SavePlayers()
@@ -104,7 +105,7 @@ namespace EK2020_Poule
             if (host != null)
             {
                 ExcelManager em = new ExcelManager();
-                var s = em.readGoalScorers("C:\\Users\\Administrator\\Documents\\EK2020 Poule Docs\\EK Poule Admin.xlsx", 6);
+                var s = em.readGoalScorers(ConfigurationManager.AppSettings.Get("AdminLocation"), Convert.ToInt32(ConfigurationManager.AppSettings.Get("GoalScorersSheet")));
                 foreach (Player player in Players)
                 {
                     if (player.Name != "Host")
