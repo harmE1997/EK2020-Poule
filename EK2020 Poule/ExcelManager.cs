@@ -130,7 +130,24 @@ namespace EK2020_Poule
         public BonusQuestions readBonus(string filename, int sheet)
         {
             Initialise(filename, sheet);
-            BonusQuestions b = new BonusQuestions(xlRange.Cells[102, 5].value2.ToLower(), xlRange.Cells[103, 5].value2.ToLower(), xlRange.Cells[104, 5].value2.ToLower());
+            string kampioen = xlRange.Cells[102, 5].value2;
+            string topscorer = xlRange.Cells[103, 5].value2;;
+            string nl = xlRange.Cells[104, 5].value2;
+            if (kampioen == null)
+            {
+                kampioen = "";
+            }
+
+            if (topscorer == null)
+            {
+                topscorer = "";
+            }
+
+            if (nl == null)
+            {
+                nl = "";
+            }
+            BonusQuestions b = new BonusQuestions(kampioen.ToLower(), kampioen.ToLower(), nl.ToLower());
             Clean();
             return b;
         }
