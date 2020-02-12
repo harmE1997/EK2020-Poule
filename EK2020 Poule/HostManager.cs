@@ -12,8 +12,11 @@ namespace EK2020_Poule
     public class HostManager
     {
         private Player Host;
+        private string HostFileName;
+
         public HostManager()
         {
+            HostFileName = ConfigurationManager.AppSettings.Get("HostFileName");
             SetHost();
         }
 
@@ -24,55 +27,16 @@ namespace EK2020_Poule
 
         public void SetHost(Player host = null)
         {
-            if (Host == null && host == null)
-            {
-                LoadHost();
-            }
-
-            else if (host != null)
-            {
-                Host = host;
-                saveHost();
-            }
-        }
-
-        private void createHost()
-        {
-            PoolMatchResult[] matches = new PoolMatchResult[48];
-            for (int i=0; i<48; i++)
-            {
-                matches[i] = new PoolMatchResult(99,99);
-            }
-            KnockOutPhase ko = new KnockOutPhase();
-
-            Host = new Player("Host","Zaltbommel", matches, ko, new BonusQuestions("", "", ""));
+            LoadHost();
         }
 
         private void LoadHost()
         {
-            string file = ConfigurationManager.AppSettings.Get("HostFileName");
-            if (File.Exists(file))
-            {
-                FileStream stream = new FileStream(file, FileMode.Open);
-                BinaryFormatter Formatter = new BinaryFormatter();
-                Host = (Player)Formatter.Deserialize(stream);
-                stream.Close();
-            }
-
-            else
-            {
-                createHost();
-                saveHost();
-            }
+            string file = ConfigurationManager.AppSettings.Get("AdminLocation");
+            int sheet = Convert.ToInt32(ConfigurationManager.AppSettings.Get("HostSheet"));
+            ExcelManager em = new ExcelManager();
+            Host = new Player("host", "zb", em.ReadGroupPhase(file, sheet, new ExcelReadSettings()), em.readKnockout(file, sheet, new ExcelReadSettings()), em.readBonus(file, sheet));
         }
 
-        private void saveHost()
-        {
-            string file = ConfigurationManager.AppSettings.Get("HostFileName");
-            FileStream stream = new FileStream(file, FileMode.Create);
-            BinaryFormatter Formatter = new BinaryFormatter();
-            Formatter.Serialize(stream, Host);
-            stream.Close();
-        }
     }
 }

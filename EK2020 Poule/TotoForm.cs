@@ -46,25 +46,18 @@ namespace EK2020_Poule
             }
 
             Player player = new Player(tbName.Text, tbTown.Text, matches, KO, new BonusQuestions(tbChampion.Text, tbTopscorer.Text, tbDutch.Text));
-            if (tbName.Text == "Host")
+            try
             {
-                hostmanager.SetHost(player);
+                manager.removePlayer(tbName.Text);
+                manager.AddPlayer(player);
             }
 
-            else
+            catch (ArgumentNullException)
             {
-                try
-                {
-                    manager.removePlayer(tbName.Text);                    
-                    manager.AddPlayer(player);
-                }
-
-                catch (ArgumentNullException)
-                {
-                    MessageBox.Show("Veld niet ingevuld. Controleer of alle velden zijn ingevuld en probeer opnieuw.");
-                }
-                manager.SavePlayers();
+                MessageBox.Show("Veld niet ingevuld. Controleer of alle velden zijn ingevuld en probeer opnieuw.");
             }
+            manager.SavePlayers();
+
 
             this.Hide();
             this.Dispose();
@@ -73,7 +66,7 @@ namespace EK2020_Poule
         public void loadPlayer(Player player)
         {
             //load group phase
-            for (int x = 0;  x < NUDs.Length; x+=2)
+            for (int x = 0; x < NUDs.Length; x += 2)
             {
                 int y = x / 2;
                 NUDs[x].Value = player.Results[y].ScoreA;
@@ -90,7 +83,7 @@ namespace EK2020_Poule
                     i++;
                 }
             }
-            
+
             //load bonus questions and other info
             tbChampion.Text = player.Questions.Answers[BonusKeys.Kampioen].Answer;
             tbTopscorer.Text = player.Questions.Answers[BonusKeys.Topscorer].Answer;
