@@ -46,6 +46,7 @@
             this.cbID = new System.Windows.Forms.ComboBox();
             this.cbPoules = new System.Windows.Forms.ComboBox();
             this.rtbNotes = new System.Windows.Forms.RichTextBox();
+            this.lblWarning = new System.Windows.Forms.Label();
             this.gbExistingplayer.SuspendLayout();
             this.gbMatches.SuspendLayout();
             this.SuspendLayout();
@@ -251,6 +252,17 @@
             this.rtbNotes.TabIndex = 13;
             this.rtbNotes.Text = "";
             // 
+            // lblWarning
+            // 
+            this.lblWarning.AutoSize = true;
+            this.lblWarning.BackColor = System.Drawing.Color.Transparent;
+            this.lblWarning.ForeColor = System.Drawing.Color.Red;
+            this.lblWarning.Location = new System.Drawing.Point(35, 380);
+            this.lblWarning.Name = "lblWarning";
+            this.lblWarning.Size = new System.Drawing.Size(243, 17);
+            this.lblWarning.TabIndex = 14;
+            this.lblWarning.Text = "First ceck run takes about 7 seconds!";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -258,6 +270,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(705, 423);
+            this.Controls.Add(this.lblWarning);
             this.Controls.Add(this.rtbNotes);
             this.Controls.Add(this.gbMatches);
             this.Controls.Add(this.btnStats);
@@ -273,6 +286,7 @@
             this.gbMatches.ResumeLayout(false);
             this.gbMatches.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -295,6 +309,7 @@
         private System.Windows.Forms.ComboBox cbID;
         private System.Windows.Forms.ComboBox cbPoules;
         private System.Windows.Forms.RichTextBox rtbNotes;
+        private System.Windows.Forms.Label lblWarning;
     }
 }
 

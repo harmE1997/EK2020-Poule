@@ -17,17 +17,16 @@ namespace EK2020_Poule
         public HostManager()
         {
             HostFileName = ConfigurationManager.AppSettings.Get("HostFileName");
-            SetHost();
+            Host = null;
         }
 
         public Player GetHost()
         {
+            if (Host == null)
+            {
+                LoadHost();
+            }
             return Host;
-        }
-
-        public void SetHost(Player host = null)
-        {
-            LoadHost();
         }
 
         private void LoadHost()

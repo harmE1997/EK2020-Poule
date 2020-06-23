@@ -116,10 +116,11 @@ namespace EK2020_Poule
                 {
                     int row = phase.startrow + (phase.gapsize * i);
                     string team = xlRange.Cells[row, phase.column].value2;
-                    if (team != null)
+                    if (team == null)
                     {
-                        ko.Stages.ElementAt(p).Value.teams.Add(team.ToLower());
+                        team = "";
                     }
+                    ko.Stages.ElementAt(p).Value.teams.Add(team.ToLower());
                 }
                 p++;
             }

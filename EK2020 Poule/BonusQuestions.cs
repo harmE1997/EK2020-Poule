@@ -31,7 +31,7 @@ namespace EK2020_Poule
             {
                 {BonusKeys.Kampioen, new Question(){Answer = kampioen, Points = 100 } },
                 {BonusKeys.NL, new Question(){Answer = NL, Points = 100} },
-                {BonusKeys.Topscorer, new Question(){Answer = topscorer, Points = 200, } },
+                {BonusKeys.Topscorer, new Question(){Answer = topscorer, Points = 0, } },
             };
         }
 
@@ -46,7 +46,7 @@ namespace EK2020_Poule
             foreach (var a in Answers)
             {
                 var ans = HostQuestions.Answers[a.Key];
-                if (a.Value.Answer == ans.Answer)
+                if (a.Value.Answer == ans.Answer && ans.Answer != "")
                 {
                     score += a.Value.Points;
                 }

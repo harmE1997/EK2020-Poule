@@ -47,21 +47,13 @@ namespace EK2020_Poule
             Player player;
             toto = new TotoForm();
             toto.manager = manager;
-            if (name == "Host")
+            player = manager.FindPlayerByName(name);
+            if (player == null)
             {
-                player = host.GetHost();
-                toto.hostmanager = host;
+                MessageBox.Show("Deze speler bestaat niet. Gebruik een andere naam");
+                return;
             }
 
-            else
-            {
-                player = manager.FindPlayerByName(name);
-                if (player == null)
-                {
-                    MessageBox.Show("Deze speler bestaat niet. Gebruik een andere naam");
-                    return;
-                }
-            }
 
             toto.loadPlayer(player);
             toto.Show();
@@ -70,12 +62,6 @@ namespace EK2020_Poule
         private void btnRemove_Click(object sender, EventArgs e)
         {
             string name = tbPlayerName.Text;
-            if (name == "Host")
-            {
-                MessageBox.Show("Invalid Name");
-                return;
-            }
-
             manager.LoadPlayers();
             bool check = manager.removePlayer(name);
             if (check)
@@ -108,7 +94,7 @@ namespace EK2020_Poule
             int As = 0;
             int Bs = 0;
             int Ds = 0;
-            int matchID = (Convert.ToInt32(cbPoules.Text) - 1) * 6 + Convert.ToInt32(cbID.Text) -1;
+            int matchID = (Convert.ToInt32(cbPoules.Text) - 1) * 6 + Convert.ToInt32(cbID.Text) - 1;
 
             foreach (Player p in manager.Players)
             {
@@ -136,7 +122,7 @@ namespace EK2020_Poule
         {
             int fulls = 0;
             int halfs = 0;
-            int matchID = (Convert.ToInt32(cbPoules.Text) - 1) * 6 + Convert.ToInt32(cbID.Text) -1;
+            int matchID = (Convert.ToInt32(cbPoules.Text) - 1) * 6 + Convert.ToInt32(cbID.Text) - 1;
             string Names = "";
             foreach (Player player in manager.Players)
             {
