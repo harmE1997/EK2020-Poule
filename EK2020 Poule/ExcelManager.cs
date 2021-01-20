@@ -167,7 +167,7 @@ namespace EK2020_Poule
                 goalScorer s = new goalScorer()
                 {
                     name = xlRange.Cells[i,1].value2.ToLower(),
-                    goals = Convert.ToInt32(xlRange.Cells[i, 2].value2)
+                    goals = Convert.ToInt32(xlRange.Cells[i, 3].value2)
                 };
                 scorers.Add(s);
                 i++;
