@@ -36,10 +36,10 @@ namespace EK2020_Poule
             GroupStartRow += miss;
             phases = new Phase[4]
             {
-                new Phase() { column = 4, startrow = 68, gapsize = 2, size = 16 },
-                new Phase() { column = 6, startrow = 69, gapsize = 4, size = 8 },
+                new Phase() { column = 4, startrow = 68, gapsize = 2, size = 16},
+                new Phase() { column = 6, startrow = 69, gapsize = 4, size = 8},
                 new Phase() { column = 8, startrow = 71, gapsize = 8, size = 4 },
-                new Phase() { column = 11, startrow = 74, gapsize = 16, size = 2 }
+                new Phase() { column = 11, startrow = 74, gapsize = 16, size = 2}
             };
         }
     }
@@ -115,6 +115,8 @@ namespace EK2020_Poule
                 for (int i = 0; i < phase.size; i++)
                 {
                     int row = phase.startrow + (phase.gapsize * i);
+                    if (i >= phase.size / 2)
+                        row++;
                     string team = xlRange.Cells[row, phase.column].value2;
                     if (team == null)
                     {
@@ -131,9 +133,9 @@ namespace EK2020_Poule
         public BonusQuestions readBonus(string filename, int sheet)
         {
             Initialise(filename, sheet);
-            string kampioen = xlRange.Cells[102, 5].value2;
-            string topscorer = xlRange.Cells[103, 5].value2;;
-            string nl = xlRange.Cells[104, 5].value2;
+            string kampioen = xlRange.Cells[103, 5].value2;
+            string topscorer = xlRange.Cells[104, 5].value2;;
+            string nl = xlRange.Cells[105, 5].value2;
             if (kampioen == null)
             {
                 kampioen = "";
@@ -148,7 +150,7 @@ namespace EK2020_Poule
             {
                 nl = "";
             }
-            BonusQuestions b = new BonusQuestions(kampioen.ToLower(), kampioen.ToLower(), nl.ToLower());
+            BonusQuestions b = new BonusQuestions(kampioen.ToLower(), topscorer.ToLower(), nl.ToLower());
             Clean();
             return b;
         }
