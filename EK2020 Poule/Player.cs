@@ -59,6 +59,8 @@ namespace EK2020_Poule
             int x = 0;
             foreach(PoolMatchResult result in Results)
             {
+                if (x == 36)
+                    break;
                 PoolMatchResult hostresult = host.Results[x];
                 if (hostresult != null || result != null)
                 {

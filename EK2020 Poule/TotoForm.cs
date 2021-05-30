@@ -27,7 +27,7 @@ namespace EK2020_Poule
         private void btnSubmit_Click(object sender, EventArgs e)
         {
             manager.LoadPlayers();
-            PoolMatchResult[] matches = new PoolMatchResult[48];
+            PoolMatchResult[] matches = new PoolMatchResult[36];
             KnockOutPhase KO = new KnockOutPhase();
             int x = 0;
             while (x < 72)
