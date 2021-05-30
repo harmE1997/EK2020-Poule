@@ -11,13 +11,13 @@ namespace EK2020_Poule
     {
         public string Name { get; private set; }
         public string Town { get; private set; }
-        public PoolMatchResult[] Results { get; private set; }
+        public List<PoolMatchResult> Results { get; private set; }
         public KnockOutPhase KnockOut { get; private set; }
         public BonusQuestions Questions { get; private set; }
         public int Score { get; private set; }
         public int Ranking { get; private set; }
 
-        public Player(string name, string town, PoolMatchResult[] poolmatches, KnockOutPhase KO, BonusQuestions BQ)
+        public Player(string name, string town, List<PoolMatchResult> poolmatches, KnockOutPhase KO, BonusQuestions BQ)
         {
             if (name != "Host")
             {
@@ -59,8 +59,6 @@ namespace EK2020_Poule
             int x = 0;
             foreach(PoolMatchResult result in Results)
             {
-                if (x == 36)
-                    break;
                 PoolMatchResult hostresult = host.Results[x];
                 if (hostresult != null || result != null)
                 {

@@ -27,13 +27,12 @@ namespace EK2020_Poule
         private void btnSubmit_Click(object sender, EventArgs e)
         {
             manager.LoadPlayers();
-            PoolMatchResult[] matches = new PoolMatchResult[36];
+            List<PoolMatchResult> matches = new List<PoolMatchResult>();
             KnockOutPhase KO = new KnockOutPhase();
             int x = 0;
             while (x < 72)
             {
-                int y = x / 2;
-                matches[y] = new PoolMatchResult(Convert.ToInt32(NUDs[x].Value), Convert.ToInt32(NUDs[x + 1].Value));
+                matches.Add(new PoolMatchResult(Convert.ToInt32(NUDs[x].Value), Convert.ToInt32(NUDs[x + 1].Value)));
                 x += 2;
             }
 

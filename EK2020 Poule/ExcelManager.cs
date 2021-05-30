@@ -74,7 +74,7 @@ namespace EK2020_Poule
             Clean();
         }
 
-        public PoolMatchResult[] ReadGroupPhase(string filename, int sheet, ExcelReadSettings Settings)
+        public List<PoolMatchResult> ReadGroupPhase(string filename, int sheet, ExcelReadSettings Settings)
         {
             Initialise(filename, sheet);
             List<PoolMatchResult> res = new List<PoolMatchResult>();
@@ -102,7 +102,7 @@ namespace EK2020_Poule
                 Groupschecked++;
             }
             Clean();
-            return res.ToArray();
+            return res;
         }
 
         public KnockOutPhase readKnockout(string filename, int sheet, ExcelReadSettings settings)
