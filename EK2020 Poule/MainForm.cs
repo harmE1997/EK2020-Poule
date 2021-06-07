@@ -142,5 +142,11 @@ namespace EK2020_Poule
 
             rtbNotes.Text = "Goede winnaar: " + halfs + "\nHelemaal correct: " + fulls + " " + Names;
         }
+
+        private void btnResetHost_Click(object sender, EventArgs e)
+        {
+            host.LoadHost();
+            MessageBox.Show("Host was reset");
+        }
     }
 }

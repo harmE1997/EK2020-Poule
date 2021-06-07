@@ -47,6 +47,7 @@
             this.cbPoules = new System.Windows.Forms.ComboBox();
             this.rtbNotes = new System.Windows.Forms.RichTextBox();
             this.lblWarning = new System.Windows.Forms.Label();
+            this.btnResetHost = new System.Windows.Forms.Button();
             this.gbExistingplayer.SuspendLayout();
             this.gbMatches.SuspendLayout();
             this.SuspendLayout();
@@ -66,7 +67,7 @@
             this.btnNewPlayer.Location = new System.Drawing.Point(13, 15);
             this.btnNewPlayer.Margin = new System.Windows.Forms.Padding(4);
             this.btnNewPlayer.Name = "btnNewPlayer";
-            this.btnNewPlayer.Size = new System.Drawing.Size(196, 70);
+            this.btnNewPlayer.Size = new System.Drawing.Size(218, 70);
             this.btnNewPlayer.TabIndex = 1;
             this.btnNewPlayer.Text = "Nieuwe Speler";
             this.btnNewPlayer.UseVisualStyleBackColor = false;
@@ -86,10 +87,10 @@
             // 
             // btnRanking
             // 
-            this.btnRanking.Location = new System.Drawing.Point(465, 15);
+            this.btnRanking.Location = new System.Drawing.Point(495, 15);
             this.btnRanking.Margin = new System.Windows.Forms.Padding(4);
             this.btnRanking.Name = "btnRanking";
-            this.btnRanking.Size = new System.Drawing.Size(204, 31);
+            this.btnRanking.Size = new System.Drawing.Size(207, 31);
             this.btnRanking.TabIndex = 4;
             this.btnRanking.Text = "Toon Tussenstand";
             this.btnRanking.UseVisualStyleBackColor = true;
@@ -136,9 +137,9 @@
             // 
             // btnCheck
             // 
-            this.btnCheck.Location = new System.Drawing.Point(466, 53);
+            this.btnCheck.Location = new System.Drawing.Point(496, 53);
             this.btnCheck.Name = "btnCheck";
-            this.btnCheck.Size = new System.Drawing.Size(204, 30);
+            this.btnCheck.Size = new System.Drawing.Size(207, 30);
             this.btnCheck.TabIndex = 10;
             this.btnCheck.Text = "Check All";
             this.btnCheck.UseVisualStyleBackColor = true;
@@ -146,10 +147,10 @@
             // 
             // btnStats
             // 
-            this.btnStats.Location = new System.Drawing.Point(465, 89);
+            this.btnStats.Location = new System.Drawing.Point(495, 89);
             this.btnStats.Name = "btnStats";
             this.btnStats.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnStats.Size = new System.Drawing.Size(204, 32);
+            this.btnStats.Size = new System.Drawing.Size(207, 32);
             this.btnStats.TabIndex = 11;
             this.btnStats.Text = "Stats";
             this.btnStats.UseVisualStyleBackColor = true;
@@ -165,9 +166,9 @@
             this.gbMatches.Controls.Add(this.cbID);
             this.gbMatches.Controls.Add(this.cbPoules);
             this.gbMatches.ForeColor = System.Drawing.Color.White;
-            this.gbMatches.Location = new System.Drawing.Point(486, 148);
+            this.gbMatches.Location = new System.Drawing.Point(495, 163);
             this.gbMatches.Name = "gbMatches";
-            this.gbMatches.Size = new System.Drawing.Size(200, 152);
+            this.gbMatches.Size = new System.Drawing.Size(207, 152);
             this.gbMatches.TabIndex = 12;
             this.gbMatches.TabStop = false;
             this.gbMatches.Text = "Matches";
@@ -246,7 +247,7 @@
             // 
             // rtbNotes
             // 
-            this.rtbNotes.Location = new System.Drawing.Point(486, 306);
+            this.rtbNotes.Location = new System.Drawing.Point(495, 321);
             this.rtbNotes.Name = "rtbNotes";
             this.rtbNotes.Size = new System.Drawing.Size(207, 105);
             this.rtbNotes.TabIndex = 13;
@@ -257,11 +258,21 @@
             this.lblWarning.AutoSize = true;
             this.lblWarning.BackColor = System.Drawing.Color.Transparent;
             this.lblWarning.ForeColor = System.Drawing.Color.Red;
-            this.lblWarning.Location = new System.Drawing.Point(35, 380);
+            this.lblWarning.Location = new System.Drawing.Point(21, 387);
             this.lblWarning.Name = "lblWarning";
-            this.lblWarning.Size = new System.Drawing.Size(243, 17);
+            this.lblWarning.Size = new System.Drawing.Size(228, 17);
             this.lblWarning.TabIndex = 14;
-            this.lblWarning.Text = "First ceck run takes about 7 seconds!";
+            this.lblWarning.Text = "Loading host takes approx. 5 secs.";
+            // 
+            // btnResetHost
+            // 
+            this.btnResetHost.Location = new System.Drawing.Point(495, 124);
+            this.btnResetHost.Name = "btnResetHost";
+            this.btnResetHost.Size = new System.Drawing.Size(207, 33);
+            this.btnResetHost.TabIndex = 15;
+            this.btnResetHost.Text = "Reset Host";
+            this.btnResetHost.UseVisualStyleBackColor = true;
+            this.btnResetHost.Click += new System.EventHandler(this.btnResetHost_Click);
             // 
             // MainForm
             // 
@@ -269,7 +280,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(705, 423);
+            this.ClientSize = new System.Drawing.Size(719, 437);
+            this.Controls.Add(this.btnResetHost);
             this.Controls.Add(this.lblWarning);
             this.Controls.Add(this.rtbNotes);
             this.Controls.Add(this.gbMatches);
@@ -310,6 +322,7 @@
         private System.Windows.Forms.ComboBox cbPoules;
         private System.Windows.Forms.RichTextBox rtbNotes;
         private System.Windows.Forms.Label lblWarning;
+        private System.Windows.Forms.Button btnResetHost;
     }
 }
 

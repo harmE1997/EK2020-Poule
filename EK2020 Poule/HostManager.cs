@@ -29,7 +29,7 @@ namespace EK2020_Poule
             return Host;
         }
 
-        private void LoadHost()
+        public void LoadHost()
         {
             string file = ConfigurationManager.AppSettings.Get("AdminLocation");
             int sheet = Convert.ToInt32(ConfigurationManager.AppSettings.Get("HostSheet"));
