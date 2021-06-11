@@ -64,10 +64,36 @@ namespace EK2020_Poule
         public IEnumerable<int> ExportPlayersToExcel(string filename, int sheet, List<Player> Players)
         {
             Initialise(filename, sheet);
+            Dictionary<string, int> reads = new Dictionary<string, int>();
+            if (xlRange.Cells[1, 2].value2 == null)
+            {
+                foreach (var player in Players)
+                    reads.Add(player.Name, 0);
+            }
+
+            else
+            {
+                for (int i = 2; i < (Players.Count + 2); i++)
+                {
+                    string name = xlRange.Cells[i, 2].value2;
+                    var oldscore = xlRange.Cells[i, 3].value2;
+                    if (oldscore == null)
+                        reads.Add(name.ToString(), 0);
+                    else
+                        reads.Add(name.ToString(), Convert.ToInt32(oldscore));
+                }
+            }
             int y = 2;
             foreach (Player player in Players)
             {
                 xlRange.Cells[y, 1].value2 = player.Ranking;
+                xlRange.Cells[y, 2].value2 = player.Name;
+                xlRange.Cells[y, 3].value2 = player.Score;
+                if(player.Score == reads[player.Name])
+                    xlRange.Cells[y, 4].value2 = player.Score;
+                else
+                    xlRange.Cells[y, 4].value2 = player.Score - reads[player.Name];
+
                 y++;
                 yield return y;
             }

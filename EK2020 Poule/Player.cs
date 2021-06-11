@@ -94,7 +94,7 @@ namespace EK2020_Poule
             var s = findGoalscorer(scorers, Questions.Answers[BonusKeys.Topscorer].Answer);
             if (s != null)
             {
-                Score += (s.goals * 40);
+                Score += (s.goals * 20);
             }
             return true;
         }

@@ -50,9 +50,9 @@ namespace EK2020_Poule
             ExcelManager m = new ExcelManager();
             foreach (int i in m.ExportPlayersToExcel(ConfigurationManager.AppSettings.Get("AdminLocation"),Convert.ToInt32(ConfigurationManager.AppSettings.Get("RankingSheet")), manager.Players))
             {
-                proBarRanking.Value = i;
+                proBarRanking.Value = (i-2);
             }
-
+            MessageBox.Show("Players have been exported succesfully!");
         }
     }
 }
