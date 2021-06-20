@@ -89,10 +89,7 @@ namespace EK2020_Poule
                 xlRange.Cells[y, 1].value2 = player.Ranking;
                 xlRange.Cells[y, 2].value2 = player.Name;
                 xlRange.Cells[y, 3].value2 = player.Score;
-                if(player.Score == reads[player.Name])
-                    xlRange.Cells[y, 4].value2 = player.Score;
-                else
-                    xlRange.Cells[y, 4].value2 = player.Score - reads[player.Name];
+                xlRange.Cells[y, 4].value2 = player.Score - reads[player.Name];
 
                 y++;
                 yield return y;
